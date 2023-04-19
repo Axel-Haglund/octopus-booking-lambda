@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-image: url(https://w7.pngwing.com/pngs/499/159/png-transparent-ocean-seawater-wind-wave-ocean-marine-mammal-computer-wallpaper-coastal-and-oceanic-landforms.png);
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.nav-links a {
+  color: #0c0b0b;
+}
+
+.logo {
+  font-size: 32px;
+  background-image: url(https://www.nicepng.com/png/full/545-5451130_download-png-octopus-ink-animated.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 60px;
+}
+
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.menu li:hover {
+  background-color: #b0c4e7;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.menu li {
+  padding: 5px 14px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: #0c0b0b;
+}
+
+.calendar {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #f2f2f2;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* to do, make in centered and smaller */
+.table {
+  position: relative;
+  width: 40%;
+  height: 400px;
+  margin: 5% auto 0;
+
+  border-collapse: collapse;
+  border-spacing: 10px;
+  padding-top: 5px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+td.booked {
+  text-align: center;
+  background-color: red;
+}
+
+td {
+  text-align: center;
+  background-color: green;
+  user-select: none;
+  border-color: #0c0b0b;
+  border-width: 2px;
+  border-style: solid;
+
+  width: 10px;
+  height: 15px;
+}
+
+.today {
+  background-color: #f2f2f2;
+}
