@@ -1,8 +1,6 @@
 <?php
 function generate_table()
 {
-
-
     // Loop through rows
     for ($i = 0; $i < 16; $i++) {
         $time = "06:30";
@@ -11,8 +9,6 @@ function generate_table()
 
         // Loop through columns
         for ($j = 0; $j < 22; $j++) {
-
-
             if ($i == 0) {
                 // echo "<td class='cell' id='header' data-time = '$time'> $time </td>";
             } else {
