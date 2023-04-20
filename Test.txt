@@ -5,4 +5,3 @@ roses are red violets are blue
 I trule think that git will work for you
 hej hopp
 pocorn
-okej din apa
