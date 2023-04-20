@@ -3,6 +3,12 @@ jag vill ha fler om jag får be
 
 roses are red violets are blue 
 I trule think that git will work for you
+<<<<<<< HEAD
 
 hej
 Ida heter jag
+=======
+hej hopp
+pocorn
+jättekul
+>>>>>>> fc46cc7133a987bfde45cf27ac284ab7391136ad
