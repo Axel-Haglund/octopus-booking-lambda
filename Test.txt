@@ -1,2 +1,5 @@
 bananer är goda 123
 jag vill ha fler om jag får be
+
+roses are red violets are blue 
+I trule think that git will work for you
