@@ -27,7 +27,7 @@
     <input type="submit" />
   </form>
 
-  <div class="table">
+  <div class="table" name="room">
     <?php require_once('api/generate_table.php') ?>
     <table id="myTable">
       <tbody>
