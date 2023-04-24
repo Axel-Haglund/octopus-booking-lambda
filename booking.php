@@ -11,7 +11,7 @@
 <body>
   <link rel="stylesheet" href="project.css" />
   <nav class="navbar">
-    <div class="logo">skapa en bokning</div>
+    <div class="logo">Octpous booking</div>
     <ul class="nav-links">
       <div class="menu">
         <li><a href="admin.html">Min sida</a></li>
@@ -20,6 +20,9 @@
       </div>
     </ul>
   </nav>
+
+
+  <button id="selected-date"></button>
 
   <div class="calender">
     <div class="header">
@@ -44,6 +47,8 @@
   </div>
 
   <script>
+    let selectedDate = "";
+
     let currentMonthIndex = new Date().getMonth();
     let currentYear = new Date().getFullYear();
 
@@ -107,9 +112,15 @@
             dateCell.innerHTML = `<button class="day-of-month">${date}</button>`;
             date++;
             dateCell.querySelector("button").addEventListener("click", () => {
-              // navigera till önskad sida
-              // gör till funktion istället för länk   så byt ut till function();
-              window.location.href = "https://example.com";
+              // uppdatera tabellen till korrekt dag
+              let selectedDate = dateCell.querySelector("button").innerText;
+              const selectedMonth = currentMonthIndex + 1;
+              const selectedYear = currentYear;
+              let dateString = `${selectedYear}-${selectedMonth}-${selectedDate}`;
+              selectedDate = dateString;
+              document.getElementById("selected-date").innerText = selectedDate;
+
+              console.log(selectedDay);
             });
           }
 
@@ -138,6 +149,9 @@
       rendercalender();
     }
   </script>
+
+  <h2 dateCell>
+  </h2>
 
   <div class="table-2" name="room">
     <?php require_once('api/generate_table.php') ?>

@@ -1,6 +1,26 @@
 <?php
+
+
+
+function getMeetings()
+{
+    require __DIR__ . "/../db-connection.php";
+    $query = "select * from meeting";
+    $result = mysqli_query($connection, $query);
+    //echo var_dump($result->fetch_assoc());
+
+    // while loop som lagrar alla meetings
+    $meetings = [];
+    while ($meeting = $result->fetch_assoc()) {
+        $meetings[] = $meeting;
+    }
+    echo var_dump($meetings);
+    return $meetings;
+}
+
 function generate_table()
 {
+    $meetings = getMeetings();
     // Loop through rows
     for ($i = 0; $i < 16; $i++) {
         $time = "06:30";
@@ -24,10 +44,27 @@ function generate_table()
                     $hour,
                     $minute
                 );
-                echo "<td class='cell' id='room' data-row = '$j' data-room = '$i' > rum $i   $time</td>";
+                $isBooked = checkIfBooked($hour, $meetings);
+                echo $isBooked;
+                if ($isBooked) {
+                    echo "<td class='cell booked' id='room' data-row = '$j' data-room = '$i' > rum $i   $time</td>";
+                } else {
+                    echo "<td class='cell' id='room' data-row = '$j' data-room = '$i' > rum $i   $time</td>";
+                }
             }
         }
 
         echo "</tr>";
+    }
+}
+
+function checkIfBooked($hour, $meetings)
+{
+    echo "from if booked " . $hour;
+    $length = count($meetings);
+    for ($i = 0; $i < $length; $i++) {
+        if ($hour == $meetings) {
+            return true;
+        }
     }
 }
