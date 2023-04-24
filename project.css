@@ -59,35 +59,79 @@ h1 {
   color: #0c0b0b;
 }
 
-.calendar {
-  font-family: Arial, sans-serif;
-  max-width: 600px;
+#mybookings {
+  color: black;
+  position: absolute;
+  left: 100px;
+  font-size: 25px;
+}
+
+.calender {
+  font-family: "Times New Roman", Times, serif;
+  max-width: 100px;
+  margin-left: 5%;
+  margin-top: 5%;
   text-align: center;
 }
 
 .header {
+  font-family: "Times New Roman", Times, serif;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
 
 button {
-  background-color: #f2f2f2;
+  background-color: #ddd(223, 217, 206, 0.453);
   border: none;
   padding: 10px;
   cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+}
+
+table .name.calender-body {
+  width: 50%;
+  border-collapse: collapse;
+}
+
+#calender-body {
+  background-color: rgba(0, 255, 255, 0);
+}
+
+th {
+  padding: 10px;
+  background-color: #ddd;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(246, 248, 248, 0);
+}
+
+.day-of-month {
+  background-color: rgba(32, 102, 222, 0);
+  cursor: pointer;
+  color: rgb(8, 8, 8);
+  font-size: 15px;
+}
+
+.date-cell:hover .day-of-month {
+  background-color: #0ea1f061;
+  color: #fff;
 }
 
 /* booking table */
-.table1 {
+.table-2 {
   position: relative;
-  width: 40%;
-  height: 400px;
+  width: 56%;
+  height: 330px;
   margin: 5% auto 0;
+  margin-top: -25%;
+  margin-right: 5%;
 
   border-collapse: collapse;
-  border-spacing: 10px;
+  border-spacing: 5px;
   padding-top: 5px;
   overflow-x: auto;
   overflow-y: auto;
@@ -98,7 +142,7 @@ td.booked {
   background-color: salmon;
 }
 
-td {
+td#room.cell {
   text-align: center;
   background-color: green;
   user-select: none;

@@ -21,13 +21,125 @@
     </ul>
   </nav>
 
-  <form action="/action_page.php">
-    <label for="booking">Booking:</label>
-    <input type="date" id="booking" name="booking" />
-    <input type="submit" />
-  </form>
+  <div class="calender">
+    <div class="header">
+      <button id="prev" onclick="prevButtonOnClick()">Föregående</button>
+      <h1 id="month"></h1>
+      <button id="next" onclick="nextButtonOnClick()">Nästa</button>
+    </div>
+    <table name="calender-table">
+      <thead>
+        <tr>
+          <th>Mån</th>
+          <th>Tis</th>
+          <th>Ons</th>
+          <th>Tor</th>
+          <th>Fre</th>
+          <th>Lör</th>
+          <th>Sön</th>
+        </tr>
+      </thead>
+      <tbody id="calender-body" name="calender-body"></tbody>
+    </table>
+  </div>
 
-  <div class="table1" name="room">
+  <script>
+    let currentMonthIndex = new Date().getMonth();
+    let currentYear = new Date().getFullYear();
+
+    rendercalender();
+
+    function rendercalender() {
+      const monthNames = [
+        "Januari",
+        "Februari",
+        "Mars",
+        "April",
+        "Maj",
+        "Juni",
+        "Juli",
+        "Augusti",
+        "September",
+        "Oktober",
+        "November",
+        "December",
+      ];
+
+      const currentMonthName = monthNames[currentMonthIndex];
+
+      const daysOfWeek = ["Mån", "Tis", "Ons", "Tor", "Fre", "Lör", "Sön"];
+
+      const daysInMonth = new Date(
+        currentYear,
+        currentMonthIndex + 1,
+        0
+      ).getDate();
+      const firstDayOfMonth = new Date(
+        currentYear,
+        currentMonthIndex,
+        1
+      ).getDay();
+
+      const calenderBody = document.getElementById("calender-body");
+
+      // Ta bort tidigare månaders datum
+      calenderBody.innerHTML = "";
+
+      // Skapa månadshuvudet
+      const monthHeader = document.getElementById("month");
+      monthHeader.innerText = currentMonthName;
+
+      // Skapa datumceller
+      let date = 1;
+      for (let i = 0; i < 6; i++) {
+        const weekRow = document.createElement("tr");
+
+        for (let j = 0; j < 7; j++) {
+          const dateCell = document.createElement("td");
+          dateCell.classList.add("date-cell");
+
+          if (i === 0 && j < firstDayOfMonth - 1) {
+            // Lägg till tomma celler före första dagen i månaden
+          } else if (date > daysInMonth) {
+            // Lägg till tomma celler efter sista dagen i månaden
+          } else {
+            // Lägg till datum i cellen
+            dateCell.innerHTML = `<button class="day-of-month">${date}</button>`;
+            date++;
+            dateCell.querySelector("button").addEventListener("click", () => {
+              // navigera till önskad sida
+              // gör till funktion istället för länk   så byt ut till function();
+              window.location.href = "https://example.com";
+            });
+          }
+
+          weekRow.appendChild(dateCell);
+        }
+
+        calenderBody.appendChild(weekRow);
+      }
+    }
+
+    function nextButtonOnClick() {
+      currentMonthIndex++;
+      if (currentMonthIndex > 11) {
+        currentMonthIndex = 0;
+        currentYear++;
+      }
+      rendercalender();
+    }
+
+    function prevButtonOnClick() {
+      currentMonthIndex--;
+      if (currentMonthIndex < 0) {
+        currentMonthIndex = 11;
+        currentYear--;
+      }
+      rendercalender();
+    }
+  </script>
+
+  <div class="table-2" name="room">
     <?php require_once('api/generate_table.php') ?>
     <table id="myTable">
       <tbody>

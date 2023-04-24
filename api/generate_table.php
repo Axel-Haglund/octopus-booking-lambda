@@ -24,7 +24,7 @@ function generate_table()
                     $hour,
                     $minute
                 );
-                echo "<td class='cell' data-row = '$j' data-room = '$i' > rum $i   $time</td>";
+                echo "<td class='cell' id='room' data-row = '$j' data-room = '$i' > rum $i   $time</td>";
             }
         }
 
