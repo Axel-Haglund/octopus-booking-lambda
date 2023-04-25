@@ -1,132 +1,59 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+.invite-user {
+  backdrop-filter: blur(10px);
+  max-width: 300px;
 }
 
-section {
+.dropdown-email {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.selected-users li {
+  margin-bottom: 10px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  width: 100%;
-  background: url(https://c4.wallpaperflare.com/wallpaper/718/177/161/ocean-octopus-sea-sealife-wallpaper-preview.jpg)
-    no-repeat;
-  background-position: center;
-  background-size: cover;
+  justify-content: space-between 5px; /* align items horizontally with space between them */
 }
 
-.form-box {
-  position: relative;
-  width: 400px;
-  height: 450px;
-  background-color: transparent;
-  border: 2px solid (255, 255, 255, 0.5);
-  border-radius: 20px;
-  backdrop-filter: blur(5px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-h2 {
-  font-size: 2em;
-  color: white;
-  text-align: center;
-}
-
-.inputbox {
-  position: relative;
-  margin: 30px 0;
-  width: 310px;
-  border-bottom: 2px solid white;
-}
-
-.inputbox label {
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  transform: translateY(-50%);
-  color: white;
-  font-size: 1em;
-  pointer-events: none;
-  transition: 0.5s;
-}
-
-input:focus ~ label,
-input:valid ~ label {
-  top: -5px;
-}
-
-/*input:focus ~ label,
-input:not(:placeholder-shown) ~ label {
-  transform: translate(0, -2.5rem);
-}*/
-
-.inputbox input {
-  width: 100%;
-  height: 50px;
-  background: transparent;
+.selected-users li button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: #fff;
   border: none;
-  outline: none;
-  font-size: 1em;
-  padding: 0 35px;
-  color: white;
-}
-
-.inputbox ion-icon {
+  border-radius: 5px;
+  cursor: pointer;
+  flex-shrink: 0; /* prevent the button from shrinking */
   position: absolute;
-  right: 8px;
-  color: white;
-  font-size: 1.2em;
-  top: 20px;
+  right: 0;
 }
 
-.forget {
-  margin: -15px 0 15px;
-  font-size: 0.9em;
-  color: white;
-  display: flex;
-  justify-content: center;
-}
-
-.forget label input {
-  margin-right: 3px;
-}
-
-.forget label a {
-  color: white;
-  text-decoration: none;
-}
-
-.forget label a:hover {
-  text-decoration: underline;
+.selected-users li:not(:last-child) {
+  margin-right: 10px; /* add margin to the right of all li elements except the last one */
 }
 
 button {
-  width: 100%;
-  height: 40px;
-  border-radius: 40px;
-  background: white;
+  background-color: green;
+  color: #fff;
+  padding: 10px 20px;
   border: none;
-  outline: none;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 1em;
-  font-weight: 600;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
-.register {
-  font-size: 0.9em;
-  color: white;
-  text-align: center;
-  margin: 25px 0px 10px;
-}
-
-.register p a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-}
-
-.register p a:hover {
-  text-decoration: underline;
+button:hover {
+  background-color: green;
 }
