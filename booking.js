@@ -47,6 +47,7 @@ async function sendBookings(bookings) {
 
     const responseData = await response.text();
     console.log(responseData); // This is the response from your PHP file
+    location.reload();
   } catch (error) {
     console.error("Error:", error);
   }
