@@ -1,7 +1,6 @@
-<!-- <?php
-      echo var_dump($_GET)
-
-      ?> -->
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 

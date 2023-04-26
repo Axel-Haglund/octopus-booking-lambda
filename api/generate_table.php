@@ -23,6 +23,8 @@ function getMeetings($date)
 
 function generate_table($date)
 {
+
+    $_SESSION["selectedDate"] = $date;
     $meetings = getMeetings($date);
     // Loop through rows
     for ($roomNumber = 1; $roomNumber <= 15; $roomNumber++) {

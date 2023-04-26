@@ -16,9 +16,6 @@ function submitBooking(e) {
   e.preventDefault();
   const selectedCells = Array.from(document.querySelectorAll(".cell.selected"));
 
-  let selectedDate = dateCell.querySelector("button").innerText;
-  let dateString = selectedDate;
-  console.log(selectedDate);
   // console.log(selectedCells);
 
   const bookings = [];
@@ -35,8 +32,7 @@ function submitBooking(e) {
     bookings.push(itemData);
   }
 
-  sendBookings(bookings, dateString);
-  console.log(bookings, dateString);
+  sendBookings(bookings);
 }
 
 async function sendBookings(bookings) {
