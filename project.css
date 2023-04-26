@@ -57,6 +57,7 @@ h1 {
   text-align: center;
   font-size: 50px;
   color: #0c0b0b;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 #mybookings {
@@ -124,10 +125,10 @@ td {
 /* booking table */
 .table-2 {
   position: relative;
-  width: 56%;
+  width: 46%;
   height: 330px;
   margin: 5% auto 0;
-  margin-top: -25%;
+  margin-top: -30%;
   margin-right: 5%;
 
   border-collapse: collapse;
@@ -166,8 +167,15 @@ td#room.cell {
 /*Mail dropdown*/
 
 .invite-user {
-  backdrop-filter: blur(10px);
-  max-width: 300px;
+  backdrop-filter: blur(5px);
+  max-width: 46%;
+  min-height: 200px;
+  color: white;
+  margin: right 5% auto 0;
+  margin-top: 0%;
+  position: relative;
+  margin: 5% auto 0;
+  margin-right: 5%;
 }
 
 .dropdown-email {
