@@ -252,19 +252,16 @@ session_start();
       }
     </script>
 
-
     <div class="selected-users"></div>
 
     <form>
-      <button onclick="sendEmails(); document.getElementById('submitBookingButton').click();" type="button">
+      <button class="send-emails-button" onclick="sendEmails(); document.getElementById('submitBookingButton').click();" type="button">
         Bekräfta
       </button>
-      <button id="submitBookingButton" type="submit" style="display:none">
+      <button id="submitBookingButton" class="submit-button" type="submit" style="display:none">
         Submit
       </button>
     </form>
 
     <script src="booking.js"></script>
-</body>
-
-</html>
+</body </html>

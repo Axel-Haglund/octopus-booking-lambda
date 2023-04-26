@@ -219,7 +219,7 @@ select {
   margin-right: 10px; /* add margin to the right of all li elements except the last one */
 }
 
-button {
+.send-emails-button {
   background-color: green;
   color: #fff;
   padding: 10px 20px;
@@ -228,6 +228,7 @@ button {
   cursor: pointer;
   font-size: 16px;
   margin-top: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 button:hover {
