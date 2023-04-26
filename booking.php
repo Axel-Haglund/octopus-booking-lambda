@@ -48,6 +48,7 @@ session_start();
     </table>
   </div>
 
+  <!-- script för kalender -->
   <script>
     let selectedDate = "";
 
@@ -146,8 +147,15 @@ session_start();
   </script>
 
   <div class="table-2" name="room">
-    <?php require_once('api/generate_table.php') ?>
-    <label for="">Boknings tabell .....</label>
+    <?php require_once('api/generate_table.php');
+
+    // Define the text and variable
+    $text = "boknings tabell";
+    $date = $_GET["date"];
+
+    // Output the text and variable above the table
+    echo '<p>' . $text . ' ' . $date . '</p>';
+    ?>
     <table id="myTable">
       <tbody>
         <?php generate_table($_GET["date"]); ?>
