@@ -1,7 +1,7 @@
-bananer är goda 123
-jag vill ha fler om jag får be
+sumbit knappen ska ha en eventlistener onclick ** 
 
-roses are red violets are blue 
-I trule think that git will work for you
-hej hopp
-pocorn
+
+
+class selected room ska bli booked (squery select all)
+
+loopa igenom den arrayn och lagra de tider och rum i en ny array. Använd element.dataset
