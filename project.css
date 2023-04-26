@@ -162,3 +162,65 @@ td#room.cell {
 .today {
   background-color: #f2f2f2;
 }
+
+/*Mail dropdown*/
+
+.invite-user {
+  backdrop-filter: blur(10px);
+  max-width: 300px;
+}
+
+.dropdown-email {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.selected-users li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between 5px; /* align items horizontally with space between them */
+}
+
+.selected-users li button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-shrink: 0; /* prevent the button from shrinking */
+  position: absolute;
+  right: 0;
+}
+
+.selected-users li:not(:last-child) {
+  margin-right: 10px; /* add margin to the right of all li elements except the last one */
+}
+
+button {
+  background-color: green;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: green;
+}
