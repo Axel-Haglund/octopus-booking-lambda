@@ -97,6 +97,7 @@ table .name.calender-body {
 
 #calender-body {
   background-color: rgba(0, 255, 255, 0);
+  backdrop-filter: blur 5px;
 }
 
 th {

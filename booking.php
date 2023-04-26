@@ -247,19 +247,19 @@
       }
     </script>
 
+
     <div class="selected-users"></div>
 
-    <button onclick="sendEmails()">Send</button>
-  </div>
+    <form>
+      <button onclick="sendEmails(); document.getElementById('submitBookingButton').click();" type="button">
+        Bekräfta
+      </button>
+      <button id="submitBookingButton" type="submit" style="display:none">
+        Submit
+      </button>
+    </form>
 
-  <form> <button id="submitBookingButton" type="submit">
-      Submit
-    </button>
-  </form>
-
-
-  <script src="booking.js">
-  </script>
+    <script src="booking.js"></script>
 </body>
 
 </html>
