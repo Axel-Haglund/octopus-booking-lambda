@@ -25,7 +25,6 @@ session_start();
   </nav>
 
 
-  <button id="selected-date"></button>
 
   <div class="calender">
     <div class="header">
