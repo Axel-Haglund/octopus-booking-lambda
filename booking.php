@@ -150,9 +150,6 @@
     }
   </script>
 
-  <h2 dateCell>
-  </h2>
-
   <div class="table-2" name="room">
     <?php require_once('api/generate_table.php') ?>
     <table id="myTable">
@@ -162,10 +159,14 @@
     </table>
   </div>
 
-  <button>
-    <label for="submit">Submit</label>
-  </button>
-  <script src="booking.js"></script>
+  <form> <button id="submitBookingButton" type="submit">
+      Submit
+    </button>
+  </form>
+
+
+  <script src="booking.js">
+  </script>
 </body>
 
 </html>

@@ -35,6 +35,7 @@ if ($_POST['password'] == $member["password"]) {
     session_start();
     $_SESSION["isLoggedIn"] = true;
     $_SESSION["loggedInMember"] = [
+        "user_id" => $member["user_id"],
         "first_name" => $member["first_name"],
         "last_name" => $member["last_name"],
         "email" => $member["email"],

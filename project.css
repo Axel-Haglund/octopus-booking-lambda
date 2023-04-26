@@ -137,9 +137,14 @@ td {
   overflow-y: auto;
 }
 
-td.booked {
+td#room.cell.selected {
   text-align: center;
-  background-color: salmon;
+  background-color: gray;
+}
+
+td#room.cell.booked {
+  text-align: center;
+  background-color: red;
 }
 
 td#room.cell {

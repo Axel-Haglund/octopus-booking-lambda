@@ -1,7 +1,7 @@
 <?php
 
 
-
+// hämtar möten från databas
 function getMeetings()
 {
     require __DIR__ . "/../db-connection.php";
@@ -14,43 +14,36 @@ function getMeetings()
     while ($meeting = $result->fetch_assoc()) {
         $meetings[] = $meeting;
     }
-    echo var_dump($meetings);
     return $meetings;
+
+    // skriver ut bokningar som en lista
+    // echo var_dump($meetings);
+
 }
 
 function generate_table()
 {
     $meetings = getMeetings();
     // Loop through rows
-    for ($i = 0; $i < 16; $i++) {
-        $time = "06:30";
+    for ($roomNumber = 1; $roomNumber <= 15; $roomNumber++) {
 
         echo "<tr>";
 
         // Loop through columns
-        for ($j = 0; $j < 22; $j++) {
-            if ($i == 0) {
-                // echo "<td class='cell' id='header' data-time = '$time'> $time </td>";
+        for ($hour = 6; $hour <= 19; $hour++) {
+
+            $time = sprintf(
+                "%02d:%02d",
+                $hour,
+                "00"
+            );
+
+            $isBooked = checkIfBooked($hour, $roomNumber, $meetings);
+            // echo $isBooked;
+            if ($isBooked) {
+                echo "<td class='cell booked' id='room' data-hour = '$hour' data-room = '$roomNumber' > rum $roomNumber   $time</td>";
             } else {
-                // creates time increments 
-                list($hour, $minute) = explode(':', $time);
-                $minute += 30;
-                if ($minute == 60) {
-                    $hour++;
-                    $minute = 0;
-                }
-                $time = sprintf(
-                    "%02d:%02d",
-                    $hour,
-                    $minute
-                );
-                $isBooked = checkIfBooked($hour, $meetings);
-                echo $isBooked;
-                if ($isBooked) {
-                    echo "<td class='cell booked' id='room' data-row = '$j' data-room = '$i' > rum $i   $time</td>";
-                } else {
-                    echo "<td class='cell' id='room' data-row = '$j' data-room = '$i' > rum $i   $time</td>";
-                }
+                echo "<td class='cell' id='room' data-hour = '$hour' data-room = '$roomNumber' > rum $roomNumber   $time</td>";
             }
         }
 
@@ -58,13 +51,16 @@ function generate_table()
     }
 }
 
-function checkIfBooked($hour, $meetings)
+function checkIfBooked($hour, $roomNumber,  $meetings)
 {
-    echo "from if booked " . $hour;
+
     $length = count($meetings);
     for ($i = 0; $i < $length; $i++) {
-        if ($hour == $meetings) {
+
+        if ($hour == $meetings[$i]["hour"] && $roomNumber == $meetings[$i]["room_id"]) {
+            // echo var_dump($meetings[$i]);
             return true;
         }
     }
+    return false;
 }
