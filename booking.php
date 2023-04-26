@@ -132,14 +132,14 @@
       }
     }
 
-    function selectedDate(dateCell, currentMonthIndex, currentYear) {
-      let selectedDate = dateCell.querySelector("button").innerText;
-      console.log(selectedDate)
-      const selectedMonth = currentMonthIndex + 1;
-      const selectedYear = currentYear;
-      let dateString = `${selectedYear}-${selectedMonth}-${selectedDate}`;
-      return dateString;
-    }
+    // function selectedDate(dateCell, currentMonthIndex, currentYear) {
+    //   let selectedDate = dateCell.querySelector("button").innerText;
+    //   console.log(selectedDate)
+    //   const selectedMonth = currentMonthIndex + 1;
+    //   const selectedYear = currentYear;
+    //   let dateString = `${selectedYear}-${selectedMonth}-${selectedDate}`;
+    //   return dateString;
+    // }
 
     function nextButtonOnClick() {
       currentMonthIndex++;

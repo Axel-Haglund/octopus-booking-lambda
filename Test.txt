@@ -1,7 +1,4 @@
-sumbit knappen ska ha en eventlistener onclick ** 
+hämta date ifrån booking php till insert_bookings
 
 
 
-class selected room ska bli booked (squery select all)
-
-loopa igenom den arrayn och lagra de tider och rum i en ny array. Använd element.dataset
