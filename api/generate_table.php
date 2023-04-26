@@ -2,10 +2,10 @@
 
 
 // hämtar möten från databas
-function getMeetings()
+function getMeetings($date)
 {
     require __DIR__ . "/../db-connection.php";
-    $query = "select * from meeting";
+    $query = "select * from meeting WHERE date = '{$date}' ";
     $result = mysqli_query($connection, $query);
     //echo var_dump($result->fetch_assoc());
 
@@ -21,9 +21,9 @@ function getMeetings()
 
 }
 
-function generate_table()
+function generate_table($date)
 {
-    $meetings = getMeetings();
+    $meetings = getMeetings($date);
     // Loop through rows
     for ($roomNumber = 1; $roomNumber <= 15; $roomNumber++) {
 

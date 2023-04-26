@@ -1,3 +1,7 @@
+<!-- <?php
+      echo var_dump($_GET)
+
+      ?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -109,20 +113,23 @@
             // Lägg till tomma celler efter sista dagen i månaden
           } else {
             // Lägg till datum i cellen
-            dateCell.innerHTML = `<button class="day-of-month">${date}</button>`;
+            const selectedMonth = currentMonthIndex + 1;
+            const selectedYear = currentYear;
+            let dateString = `${selectedYear}-${selectedMonth}-${date}`;
+            dateCell.innerHTML = `<a href="?date=${dateString}" class="day-of-month">${date}</a>`;
             date++;
-            dateCell.querySelector("button").addEventListener("click", () => {
-              // uppdatera tabellen till korrekt dag
-              let selectedDate = dateCell.querySelector("button").innerText;
-              const selectedMonth = currentMonthIndex + 1;
-              const selectedYear = currentYear;
-              let dateString = `${selectedYear}-${selectedMonth}-${selectedDate}`;
-              // selectedDate = dateString;
-              // document.getElementById("selected-date").innerText = selectedDate;
+            // dateCell.querySelector("button").addEventListener("click", () => {
+            // uppdatera tabellen till korrekt dag
+            // let selectedDate = dateCell.querySelector("button").innerText;
+            // const selectedMonth = currentMonthIndex + 1;
+            // const selectedYear = currentYear;
+            // let dateString = `${selectedYear}-${selectedMonth}-${selectedDate}`;
+            // selectedDate = dateString;
+            // document.getElementById("selected-date").innerText = selectedDate;
 
-              // console.log(selectedDay);
-              console.log(dateString);
-            });
+            // console.log(selectedDay);
+            //   console.log(dateString);
+            // });
           }
 
           weekRow.appendChild(dateCell);
@@ -164,7 +171,7 @@
     <?php require_once('api/generate_table.php') ?>
     <table id="myTable">
       <tbody>
-        <?php generate_table(); ?>
+        <?php generate_table($_GET["date"]); ?>
       </tbody>
     </table>
   </div>
