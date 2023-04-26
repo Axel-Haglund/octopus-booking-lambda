@@ -116,18 +116,7 @@ session_start();
             let dateString = `${selectedYear}-${selectedMonth}-${date}`;
             dateCell.innerHTML = `<a href="?date=${dateString}" class="day-of-month">${date}</a>`;
             date++;
-            // dateCell.querySelector("button").addEventListener("click", () => {
-            // uppdatera tabellen till korrekt dag
-            // let selectedDate = dateCell.querySelector("button").innerText;
-            // const selectedMonth = currentMonthIndex + 1;
-            // const selectedYear = currentYear;
-            // let dateString = `${selectedYear}-${selectedMonth}-${selectedDate}`;
-            // selectedDate = dateString;
-            // document.getElementById("selected-date").innerText = selectedDate;
 
-            // console.log(selectedDay);
-            //   console.log(dateString);
-            // });
           }
 
           weekRow.appendChild(dateCell);
@@ -136,15 +125,6 @@ session_start();
         calenderBody.appendChild(weekRow);
       }
     }
-
-    // function selectedDate(dateCell, currentMonthIndex, currentYear) {
-    //   let selectedDate = dateCell.querySelector("button").innerText;
-    //   console.log(selectedDate)
-    //   const selectedMonth = currentMonthIndex + 1;
-    //   const selectedYear = currentYear;
-    //   let dateString = `${selectedYear}-${selectedMonth}-${selectedDate}`;
-    //   return dateString;
-    // }
 
     function nextButtonOnClick() {
       currentMonthIndex++;
@@ -167,6 +147,7 @@ session_start();
 
   <div class="table-2" name="room">
     <?php require_once('api/generate_table.php') ?>
+    <label for="">Boknings tabell .....</label>
     <table id="myTable">
       <tbody>
         <?php generate_table($_GET["date"]); ?>
