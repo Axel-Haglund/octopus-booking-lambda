@@ -168,7 +168,7 @@
       </tbody>
     </table>
   </div>
-  <link rel="stylesheet" href="project.css">
+
   <div class="invite-user">
     <h1>Bjud in kollegor</h1>
 
