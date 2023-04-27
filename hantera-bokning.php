@@ -24,9 +24,7 @@ session_start();
         </ul>
     </nav>
     <div>
-        <h1>Välkommen!</h1>
-        <br />
-        <h2>Dina kommande bokningar</h2>
+        <h1>Följande bokningar har registrerats</h1>
     </div>
 </body>
 
@@ -36,7 +34,7 @@ session_start();
     $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
     $user_id = $_SESSION["loggedInMember"]["user_id"];
 
-    $sql = "SELECT *  room_id, hour, date FROM meeting = '{$user_id}';";
+    $sql = "SELECT * FROM meeting WHERE room_id= '{$user_id}';";
     $result = mysqli_query($connection, $sql);
 
     // Loop through the query results and populate the list with a delete button for each row
