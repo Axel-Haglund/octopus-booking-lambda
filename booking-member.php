@@ -19,7 +19,7 @@ session_start();
             <div class="menu">
                 <li><a href="member.php">Min sida</a></li>
                 <li><a href="">Kontakta Admin</a></li>
-                <li><a href="index.php">Logga ut</a></li>
+                <li><a href="login.php">Logga ut</a></li>
             </div>
         </ul>
     </nav>

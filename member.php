@@ -16,7 +16,7 @@
       <div class="menu">
         <li><a href="booking-member.php">Boka</a></li>
         <li><a href="">Kontakta Admin</a></li>
-        <li><a href="index.php">Logga ut</a></li>
+        <li><a href="login.php">Logga ut</a></li>
       </div>
     </ul>
   </nav>
