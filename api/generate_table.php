@@ -43,7 +43,8 @@ function generate_table($date)
             $isBooked = checkIfBooked($hour, $roomNumber, $meetings);
             // echo $isBooked;
             if ($isBooked) {
-                echo "<td class='cell booked' id='room' data-hour = '$hour' data-room = '$roomNumber' > rum $roomNumber   $time</td>";
+
+                echo "<td class='cell booked' id='room' data-hour = '$hour' data-room = '$roomNumber' data-is-booked = '$isBooked'> rum $roomNumber   $time</td>";
             } else {
                 echo "<td class='cell' id='room' data-hour = '$hour' data-room = '$roomNumber' > rum $roomNumber   $time</td>";
             }

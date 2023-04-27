@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+?>
 
 <head>
   <meta charset="UTF-8" />
@@ -47,4 +50,25 @@
     </thead>
     <tbody id="calender-body"></tbody>
   </table>
+</div>
+<div class="booking-list">
+  <?php
+  $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
+  $user_id = $_SESSION["loggedInMember"]["user_id"];
+
+  $sql = "SELECT room_id, hour, date FROM meeting WHERE user_id = '{$user_id}';";
+  $result = mysqli_query($connection, $sql);
+
+  // Loop through the query results and populate the dropdown list
+  while ($row = mysqli_fetch_assoc($result)) {
+    echo "<option>"  . $row['room_id'] . ", " . $row['date'] . ", " . $row['hour'] . "</option>";
+  }
+  ?>
+  <script>
+    deleteBooking();
+
+    function deleteBooking() {
+
+    }
+  </script>
 </div>

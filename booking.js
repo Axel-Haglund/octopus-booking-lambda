@@ -28,6 +28,7 @@ function submitBooking(e) {
     const itemData = {
       room: listItem.dataset.room,
       hour: listItem.dataset.hour,
+      isbooked: listItem.dataset.isbooked,
     };
     bookings.push(itemData);
   }

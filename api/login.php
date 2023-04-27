@@ -48,7 +48,7 @@ if ($_POST['password'] == $member["password"]) {
 
 if ($_SESSION["loggedInMember"]["admin"] == 1) {
     show($_SESSION);
-    header("location: ../admin.html");
+    header("location: ../admin.php");
 } else {
     show($_SESSION);
     header("location: ../member.html");
