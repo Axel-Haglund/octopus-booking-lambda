@@ -51,7 +51,7 @@ if ($_SESSION["loggedInMember"]["admin"] == 1) {
     header("location: ../admin.php");
 } else {
     show($_SESSION);
-    header("location: ../member.html");
+    header("location: ../member.php");
 }
 
 
