@@ -58,7 +58,7 @@ session_start();
   // Loop through the query results and populate the list with a delete button for each row
   while ($row = mysqli_fetch_assoc($result)) {
     echo "<div class='booking-row'>";
-    echo "<span>" . "room nr" . $row['room_id'] . ", " . $row['date'] . ", klockan" . $row['hour'] . "</span>";
+    echo "<span>" . "rum " . $row['room_id'] . ", " . $row['date'] . ", klockan " . $row['hour'] . "</span>";
     echo "<form method='post'>";
     echo "<input type='hidden' name='room' value='" . $row['room_id'] . "'>";
     echo "<input type='hidden' name='hour' value='" . $row['hour'] . "'>";
