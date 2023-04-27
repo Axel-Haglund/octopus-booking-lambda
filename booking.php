@@ -163,6 +163,8 @@ session_start();
     </table>
   </div>
 
+  // Dropdown email starts
+
   <div class="invite-user">
     <h1>Bjud in kollegor</h1>
 
