@@ -12,6 +12,9 @@ session_start();
 </head>
 
 <body>
+ <?php
+  $admin = $_GET["admin"];
+  ?>
 
   <link rel="stylesheet" href="project.css" />
   <nav class="navbar">
@@ -19,7 +22,7 @@ session_start();
     <ul class="nav-links">
       <div class="menu">
         <li><a href="admin.php">Min sida</a></li>
-
+      
         <li><a href="/">Hantera bokningar</a></li>
         <li><a href="index.php">Logga ut</a></li>
       </div>
@@ -159,7 +162,7 @@ session_start();
 
     // Output the text and variable above the table
     if (!$date) {
-
+      $date=
       echo '<p>' . $text . ' ' . $currentday . '</p>';
     } else {
       echo '<p>' . $text . ' ' . $date . '</p>';
