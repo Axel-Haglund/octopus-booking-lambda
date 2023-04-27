@@ -32,7 +32,7 @@ function generate_table($date)
         echo "<tr>";
 
         // Loop through columns
-        for ($hour = 6; $hour <= 19; $hour++) {
+        for ($hour = 7; $hour <= 17; $hour++) {
 
             $time = sprintf(
                 "%02d:%02d",
