@@ -13,11 +13,14 @@ session_start();
 </head>
 
 <body>
+  <?php
+  $today = date("");
+  ?>
   <nav class="navbar">
     <div class="logo">OctopusBooking</div>
     <ul class="nav-links">
       <div class="menu">
-        <li><a href="booking-admin.php">Boka</a></li>
+        <li><a href="booking-admin.php?parameter=<?php echo urlencode($today); ?>">Boka</a></li>
         <li><a href="/">Hantera bokningar</a></li>
         <li><a href="login.php">Logga ut</a></li>
       </div>

@@ -171,7 +171,7 @@ session_start();
 
     <table id="myTable">
       <tbody>
-        <?php generate_table($_GET["date"]); ?>
+        <?php generate_table($_GET["date"], $_GET["today"]); ?>
       </tbody>
     </table>
   </div>

@@ -154,8 +154,8 @@ session_start();
     // Define the text and variable
     $text = "boknings tabell";
     $date = $_GET["date"];
-    // date_default_timezone_set("Europe/Stockholm");
     $currentday = date("Y-m-d");
+
 
     // Output the text and variable above the table
     if (!$date) {
@@ -169,7 +169,7 @@ session_start();
 
     <table id="myTable">
       <tbody>
-        <?php generate_table($_GET["date"]); ?>
+        <?php generate_table($_GET["date"], $_GET["today"]); ?>
       </tbody>
     </table>
   </div>
