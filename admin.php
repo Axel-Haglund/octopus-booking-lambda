@@ -25,6 +25,8 @@ session_start();
   </nav>
   <div>
     <h1>Välkommen!</h1>
+    <br />
+    <h2>Dina kommande bokningar</h2>
   </div>
 </body>
 
