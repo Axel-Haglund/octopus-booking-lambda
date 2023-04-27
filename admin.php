@@ -30,29 +30,6 @@ session_start();
 
 </html>
 
-<div class="calender">
-  <div class="header">
-    <button id="prev">Föregående</button>
-    <h1 id="month"></h1>
-    <button id="next">Nästa</button>
-  </div>
-  <table>
-    <thead>
-      <tr>
-        <th>Mån</th>
-        <th>Tis</th>
-        <th>Ons</th>
-        <th>Tor</th>
-        <th>Fre</th>
-        <th>Lör</th>
-        <th>Sön</th>
-      </tr>
-    </thead>
-    <tbody id="calender-body"></tbody>
-  </table>
-</div>
-<div class="selected-users"></div>
-
 <!-- <div class="booking-list">
   <?php
   $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
