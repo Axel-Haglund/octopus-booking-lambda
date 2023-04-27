@@ -152,10 +152,18 @@ session_start();
     // Define the text and variable
     $text = "boknings tabell";
     $date = $_GET["date"];
+    // date_default_timezone_set("Europe/Stockholm");
+    $currentday = date("Y-m-d");
 
     // Output the text and variable above the table
-    echo '<p>' . $text . ' ' . $date . '</p>';
+    if (!$date) {
+      echo '<p>' . $text . ' ' . $currentday . '</p>';
+    } else {
+      echo '<p>' . $text . ' ' . $date . '</p>';
+    }
+
     ?>
+
     <table id="myTable">
       <tbody>
         <?php generate_table($_GET["date"]); ?>
