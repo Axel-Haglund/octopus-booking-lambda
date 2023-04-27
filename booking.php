@@ -17,7 +17,7 @@ session_start();
     <div class="logo">Octpous booking</div>
     <ul class="nav-links">
       <div class="menu">
-        <li><a href="admin.php">Min sida</a></li>
+        <li><a href="admin.html">Min sida</a></li>
         <li><a href="/">Hantera bokningar</a></li>
         <li><a href="index.php">Logga ut</a></li>
       </div>
