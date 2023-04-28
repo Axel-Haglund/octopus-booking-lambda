@@ -13,9 +13,7 @@ session_start();
 </head>
 
 <body>
-  <?php
-  $today = date("");
-  ?>
+
   <nav class="navbar">
     <div class="logo">OctopusBooking</div>
     <ul class="nav-links">
