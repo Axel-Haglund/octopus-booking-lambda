@@ -20,6 +20,7 @@ function getMeetings($date)
     return $meetings;
 }
 
+
 function generate_table($date)
 {
 
@@ -51,6 +52,27 @@ function generate_table($date)
         }
 
         echo "</tr>";
+    }
+}
+function generate_room_table($roomNumber, $date)
+{
+    $meetings = getMeetings($date);
+    for ($hour = 7; $hour <= 17; $hour++) {
+
+        $time = sprintf(
+            "%02d:%02d",
+            $hour,
+            "00"
+        );
+
+        $isBooked = checkIfBooked($hour, $roomNumber, $meetings);
+        // echo $isBooked;
+        if ($isBooked) {
+
+            echo "<td class='cell booked' id='room' data-hour = '$hour' data-room = '$roomNumber' data-is-booked = '$isBooked'> rum $roomNumber   $time</td>";
+        } else {
+            echo "<td class='cell' id='room' data-hour = '$hour' data-room = '$roomNumber' > rum $roomNumber   $time</td>";
+        }
     }
 }
 
