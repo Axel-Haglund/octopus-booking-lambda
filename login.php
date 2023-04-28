@@ -10,6 +10,15 @@
 </head>
 
 <body>
+    <link rel="stylesheet" href="project.css" />
+    <nav class="navbar">
+        <div class="logo">Octpous booking</div>
+        <ul class="nav-links">
+            <div class="menu">
+                <li><a href="roow-window.php">Rumsvy</a></li>
+            </div>
+        </ul>
+    </nav>
     <section>
         <div class="form-box">
             <div class="form-value">
