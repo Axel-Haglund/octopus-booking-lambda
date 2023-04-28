@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,3 +31,42 @@
 </body>
 
 </html>
+
+
+
+<div class="booking-list">
+  <?php
+  $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
+  $user_id = $_SESSION["loggedInMember"]["user_id"];
+
+  $sql = "SELECT room_id, hour, date FROM meeting WHERE user_id = '{$user_id}';";
+  $result = mysqli_query($connection, $sql);
+
+  // Loop through the query results and populate the list with a delete button for each row
+  while ($row = mysqli_fetch_assoc($result)) {
+    echo "<div class='booking-row'>";
+    echo "<span>" . "rum " . $row['room_id'] . ", " . $row['date'] . ", klockan " . $row['hour'] . "</span>";
+    echo "<form method='post'>";
+    echo "<input type='hidden' name='room' value='" . $row['room_id'] . "'>";
+    echo "<input type='hidden' name='hour' value='" . $row['hour'] . "'>";
+    echo "<input type='hidden' name='date' value='" . $row['date'] . "'>";
+    echo "<input type='submit' name='delete' value='Delete'>";
+    echo "</form>";
+    echo "</div>";
+  }
+
+  // Check if the delete button was clicked and delete the corresponding record
+  if (isset($_POST['delete'])) {
+    $room_id = $_POST['room'];
+    $hour = $_POST['hour'];
+    $date = $_POST['date'];
+    $query = "DELETE FROM meeting WHERE room_id = '{$room_id}' AND user_id = '{$user_id}' AND hour = '{$hour}' AND date = '{$date}';";
+    mysqli_query($connection, $query);
+    header("Refresh:0");
+    // echo  $query;
+    mysqli_close($connection);
+
+    // Add code to display a success message or redirect to a different page
+  }
+  ?>
+</div>
