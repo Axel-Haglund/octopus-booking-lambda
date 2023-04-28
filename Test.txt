@@ -1,4 +1,7 @@
-hämta date ifrån booking php till insert_bookings
+rumsvyns bokningar ska få det user_id som är valt i drop downlisten
+
+man ska kunna välja rum och datum för att kunna visa demo
+
 
 
 
