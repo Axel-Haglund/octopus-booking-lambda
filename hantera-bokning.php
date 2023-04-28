@@ -24,27 +24,43 @@ session_start();
         </ul>
     </nav>
     <div>
-        <h1>Följande bokningar har registrerats</h1>
+        <h1>S amtliga bokningar</h1>
     </div>
 </body>
 
+
+<!-- <div class="booking-list">
+  <?php
+    $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
+    $user_id = $_SESSION["loggedInMember"]["user_id"];
+
+    $sql = "SELECT room_id, hour, date, user_id FROM meeting;";
+    $result = mysqli_query($connection, $sql);
+
+    // Loop through the query results and populate the dropdown list
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<option>"  . $row['room_id'] . ", " . $row['date'] . ", " . $row['hour'] . ", " . $row['user_id'] .  "</option>";
+    }
+    ?>
+</div> -->
 
 <div class="booking-list">
     <?php
     $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
     $user_id = $_SESSION["loggedInMember"]["user_id"];
 
-    $sql = "SELECT * FROM meeting WHERE room_id= '{$user_id}';";
+    $sql = "SELECT room_id, hour, date, user_id FROM meeting;";
     $result = mysqli_query($connection, $sql);
 
     // Loop through the query results and populate the list with a delete button for each row
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<div class='booking-row'>";
-        echo "<span>" . "rum " . $row['room_id'] . ", " . $row['date'] . ", klockan " . $row['hour'] . "</span>";
+        echo "<span>" . "rum " . $row['room_id'] . ", " . $row['date'] . ", klockan " . $row['hour'] . ", användar id" . $row['user_id'] . "</span>";
         echo "<form method='post'>";
         echo "<input type='hidden' name='room' value='" . $row['room_id'] . "'>";
         echo "<input type='hidden' name='hour' value='" . $row['hour'] . "'>";
         echo "<input type='hidden' name='date' value='" . $row['date'] . "'>";
+        echo "<input type='hidden' name='date' value='" . $row['user_id'] . "'>";
         echo "<input type='submit' name='delete' value='Delete'>";
         echo "</form>";
         echo "</div>";
