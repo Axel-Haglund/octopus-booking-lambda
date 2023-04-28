@@ -35,6 +35,7 @@ if ($_POST['password'] == $member["password"]) {
     session_start();
     $_SESSION["isLoggedIn"] = true;
     $_SESSION["loggedInMember"] = [
+        "user_id" => $member["user_id"],
         "first_name" => $member["first_name"],
         "last_name" => $member["last_name"],
         "email" => $member["email"],
@@ -47,10 +48,10 @@ if ($_POST['password'] == $member["password"]) {
 
 if ($_SESSION["loggedInMember"]["admin"] == 1) {
     show($_SESSION);
-    header("location: ../admin.html");
+    header("location: ../admin.php");
 } else {
     show($_SESSION);
-    header("location: ../member.html");
+    header("location: ../member.php");
 }
 
 

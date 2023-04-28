@@ -12,9 +12,6 @@ session_start();
 </head>
 
 <body>
-  <?php
-  $admin = $_GET["admin"];
-  ?>
 
   <link rel="stylesheet" href="project.css" />
   <nav class="navbar">
@@ -22,7 +19,7 @@ session_start();
     <ul class="nav-links">
       <div class="menu">
         <li><a href="admin.php">Min sida</a></li>
-        <li><a href="/">Hantera bokningar</a></li>
+        <li><a href="hantera-bokning.php">Hantera bokningar</a></li>
         <li><a href="login.php">Logga ut</a></li>
       </div>
     </ul>
@@ -156,20 +153,12 @@ session_start();
     // Define the text and variable
     $text = "boknings tabell";
     $date = $_GET["date"];
-    $currentday = date("Y-m-d");
-
-    // Output the text and variable above the table
-    if (!$date) {
-      echo '<p>' . $text . ' ' . $currentday . '</p>';
-    } else {
-      echo '<p>' . $text . ' ' . $date . '</p>';
-    }
 
     ?>
 
     <table id="myTable">
       <tbody>
-        <?php generate_table($_GET["date"], $_GET["today"]); ?>
+        <?php generate_table($_GET["date"]); ?>
       </tbody>
     </table>
   </div>

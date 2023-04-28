@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: sans-serif;
   background-image: url(https://w7.pngwing.com/pngs/499/159/png-transparent-ocean-seawater-wind-wave-ocean-marine-mammal-computer-wallpaper-coastal-and-oceanic-landforms.png);
   background-size: cover;
 }
@@ -57,48 +57,99 @@ h1 {
   text-align: center;
   font-size: 50px;
   color: #0c0b0b;
+  font-family: sans-serif;
 }
 
-.calendar {
-  font-family: Arial, sans-serif;
-  max-width: 600px;
+#mybookings {
+  color: black;
+  position: absolute;
+  left: 100px;
+  font-size: 25px;
+}
+
+.calender {
+  font-family: sans-serif;
+  max-width: 100px;
+  margin-left: 5%;
+  margin-top: 5%;
   text-align: center;
 }
 
 .header {
+  font-family: sans-serif;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
 
 button {
-  background-color: #f2f2f2;
+  background-color: #ddd(223, 217, 206, 0.453);
   border: none;
   padding: 10px;
   cursor: pointer;
+  font-family: sans-serif;
 }
 
-/* to do, make in centered and smaller */
-.table {
+table .name.calender-body {
+  width: 50%;
+  border-collapse: collapse;
+}
+
+#calender-body {
+  background-color: rgba(0, 255, 255, 0);
+  backdrop-filter: blur 5px;
+}
+
+th {
+  padding: 10px;
+  background-color: #ddd;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(246, 248, 248, 0);
+}
+
+.day-of-month {
+  background-color: rgba(32, 102, 222, 0);
+  cursor: pointer;
+  color: rgb(8, 8, 8);
+  font-size: 15px;
+}
+
+.date-cell:hover .day-of-month {
+  background-color: #0ea1f061;
+  color: #fff;
+}
+
+/* booking table */
+.table-2 {
   position: relative;
-  width: 40%;
-  height: 400px;
+  width: 46%;
+  height: 330px;
   margin: 5% auto 0;
+  margin-top: -30%;
+  margin-right: 5%;
 
   border-collapse: collapse;
-  border-spacing: 10px;
+  border-spacing: 5px;
   padding-top: 5px;
   overflow-x: auto;
   overflow-y: auto;
 }
 
-td.booked {
+td#room.cell.selected {
+  text-align: center;
+  background-color: gray;
+}
+
+td#room.cell.booked {
   text-align: center;
   background-color: red;
 }
 
-td {
+td#room.cell {
   text-align: center;
   background-color: green;
   user-select: none;
@@ -112,4 +163,106 @@ td {
 
 .today {
   background-color: #f2f2f2;
+}
+
+/*Mail dropdown*/
+
+.invite-user {
+  backdrop-filter: blur(5px);
+  max-width: 46%;
+  min-height: 200px;
+  color: white;
+  margin: right 5% auto 0;
+  margin-top: 0%;
+  position: relative;
+  margin: 5% auto 0;
+  margin-right: 5%;
+}
+
+.dropdown-email {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.selected-users li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between 5px; /* align items horizontally with space between them */
+}
+
+.selected-users li button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-shrink: 0; /* prevent the button from shrinking */
+  position: absolute;
+  right: 0;
+}
+
+.selected-users li:not(:last-child) {
+  margin-right: 10px; /* add margin to the right of all li elements except the last one */
+}
+
+.send-emails-button {
+  background-color: green;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  font-family: sans-serif;
+}
+
+button:hover {
+  background-color: green;
+}
+
+/* mina sidor listan av bokningar */
+
+.invite-user {
+  backdrop-filter: blur(5px);
+  max-width: 46%;
+  min-height: 200px;
+  color: black;
+  margin: right 5% auto 0;
+  margin-top: 0%;
+  position: relative;
+  margin: 5% auto 0;
+  margin-right: 5%;
+}
+.booking-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.booking-row span {
+  margin-right: 10px;
+}
+
+.booking-row input[type="submit"] {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
 }
