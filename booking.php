@@ -22,7 +22,6 @@ session_start();
     <ul class="nav-links">
       <div class="menu">
         <li><a href="admin.php">Min sida</a></li>
-
         <li><a href="/">Hantera bokningar</a></li>
         <li><a href="login.php">Logga ut</a></li>
       </div>
