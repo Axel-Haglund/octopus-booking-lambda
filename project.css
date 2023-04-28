@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: sans-serif;
   background-image: url(https://w7.pngwing.com/pngs/499/159/png-transparent-ocean-seawater-wind-wave-ocean-marine-mammal-computer-wallpaper-coastal-and-oceanic-landforms.png);
   background-size: cover;
 }
@@ -57,7 +57,7 @@ h1 {
   text-align: center;
   font-size: 50px;
   color: #0c0b0b;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: sans-serif;
 }
 
 #mybookings {
@@ -68,7 +68,7 @@ h1 {
 }
 
 .calender {
-  font-family: "Times New Roman", Times, serif;
+  font-family: sans-serif;
   max-width: 100px;
   margin-left: 5%;
   margin-top: 5%;
@@ -76,7 +76,7 @@ h1 {
 }
 
 .header {
-  font-family: "Times New Roman", Times, serif;
+  font-family: sans-serif;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
@@ -87,7 +87,7 @@ button {
   border: none;
   padding: 10px;
   cursor: pointer;
-  font-family: "Times New Roman", Times, serif;
+  font-family: sans-serif;
 }
 
 table .name.calender-body {
@@ -228,7 +228,7 @@ select {
   cursor: pointer;
   font-size: 16px;
   margin-top: 10px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: sans-serif;
 }
 
 button:hover {
