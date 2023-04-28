@@ -20,13 +20,8 @@ session_start();
     <div class="logo">OctopusBooking</div>
     <ul class="nav-links">
       <div class="menu">
-<<<<<<< HEAD
-        <li><a href="booking-admin.php?parameter=<?php echo urlencode($today); ?>">Boka</a></li>
-        <li><a href="/">Hantera bokningar</a></li>
-=======
         <li><a href="booking-admin.php">Boka</a></li>
         <li><a href="hantera-bokning.php">Hantera bokningar</a></li>
->>>>>>> 313b7e05ed3f0282a4c6c2cd8e268dd60817db54
         <li><a href="login.php">Logga ut</a></li>
       </div>
     </ul>
