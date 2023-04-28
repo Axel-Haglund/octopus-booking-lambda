@@ -2,19 +2,15 @@
 
 
 // hämtar möten från databas
-function getMeetings($date, $today)
+function getMeetings($date)
 {
     require __DIR__ . "/../db-connection.php";
 
-    if ($date == null) {
-        $query = "select * from meeting WHERE date = '{$today}' ";
-        $result = mysqli_query($connection, $query);
-    } else {
-        $query = "select * from meeting WHERE date = '{$date}' ";
-        $result = mysqli_query($connection, $query);
-    }
 
-    //echo var_dump($result->fetch_assoc());
+    $query = "select * from meeting WHERE date = '{$date}' ";
+    $result = mysqli_query($connection, $query);
+
+
 
     // while loop som lagrar alla meetings
     $meetings = [];
@@ -22,18 +18,14 @@ function getMeetings($date, $today)
         $meetings[] = $meeting;
     }
     return $meetings;
-
-    // skriver ut bokningar som en lista
-    // echo var_dump($meetings);
-
 }
 
-function generate_table($date, $today)
+function generate_table($date)
 {
 
     $_SESSION["selectedDate"] = $date;
 
-    $meetings = getMeetings($date, $today);
+    $meetings = getMeetings($date);
     // Loop through rows
     for ($roomNumber = 1; $roomNumber <= 15; $roomNumber++) {
 
