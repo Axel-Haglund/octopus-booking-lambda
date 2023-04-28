@@ -12,7 +12,7 @@
 <body>
     <link rel="stylesheet" href="project.css" />
     <nav class="navbar">
-        <div class="logo">Octpous booking</div>
+        <div class="logo">Octopus booking</div>
         <ul class="nav-links">
             <div class="menu">
                 <li><a href="room-window.php">Rumsvy</a></li>
