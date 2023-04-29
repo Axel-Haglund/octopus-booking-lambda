@@ -25,7 +25,7 @@ session_start();
     </ul>
   </nav>
   <div>
-    <h1>Välkommen!</h1>
+    <h1>Välkommen Admin!</h1>
     <br />
     <h2>Dina kommande bokningar</h2>
   </div>
