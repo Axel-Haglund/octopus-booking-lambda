@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,6 +72,8 @@ session_start();
             select.addEventListener('change', function() {
                 selected_email = select.options[select.selectedIndex].value;
                 console.log(selected_email);
+                $sql = "SELECT user_id FROM user WHERE email = '{selected_email}'";
+                $user_id = mysqli_query($connection, $sql);
             });
 
             function sendEmails() {
@@ -78,13 +81,10 @@ session_start();
                 if (message && selected_email) {
                     console.log("Sending message: " + message);
                     console.log("To user: " + selected_email);
-                    alert("Your message has been sent to " + selected_email + "!");
                     selected_email = '';
                     select.selectedIndex = 0;
                 } else if (!selected_email) {
                     alert("Please select a user.");
-                } else {
-                    alert("Please enter a message.");
                 }
             }
         </script>
