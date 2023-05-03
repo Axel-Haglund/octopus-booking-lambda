@@ -151,14 +151,20 @@ session_start();
     <?php require_once('api/generate_table.php');
 
     // Define the text and variable
-    $text = "boknings tabell";
-    $date = $_GET["date"];
+    $text = "Datum:";
+    $date = isset($_GET['date']) ? $_GET['date'] : date('Y-m-d');
+    $currentday = date("Y-m-d");
 
+    if (!$date) {
+      echo '<p>' . $text . ' ' . $currentday . '</p>';
+  } else {
+      echo '<p>' . $text . ' ' . $date . '</p>';
+  }
     ?>
 
     <table id="myTable">
       <tbody>
-        <?php generate_table($_GET["date"]); ?>
+        <?php generate_table($date); ?>
       </tbody>
     </table>
   </div>

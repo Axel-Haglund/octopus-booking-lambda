@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Times New Roman", Times, serif;
   background-image: url(https://w7.pngwing.com/pngs/499/159/png-transparent-ocean-seawater-wind-wave-ocean-marine-mammal-computer-wallpaper-coastal-and-oceanic-landforms.png);
   background-size: cover;
 }
@@ -16,6 +16,16 @@ a {
 
 li {
   list-style: none;
+}
+
+.loginnavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: black;
+  backdrop-filter: blur(10px);
+  filter: brightness(1, 7);
 }
 
 .navbar {
@@ -68,7 +78,7 @@ h1 {
 }
 
 .calender {
-  font-family: sans-serif;
+  font-family: "Times New Roman", Times, serif;
   max-width: 100px;
   margin-left: 5%;
   margin-top: 5%;
@@ -76,7 +86,7 @@ h1 {
 }
 
 .header {
-  font-family: sans-serif;
+  font-family: "Times New Roman", Times, serif;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
@@ -87,7 +97,7 @@ button {
   border: none;
   padding: 10px;
   cursor: pointer;
-  font-family: sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 table .name.calender-body {
@@ -228,7 +238,7 @@ select {
   cursor: pointer;
   font-size: 16px;
   margin-top: 10px;
-  font-family: sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 button:hover {
@@ -265,4 +275,36 @@ button:hover {
   font-weight: bold;
   font-size: 14px;
   cursor: pointer;
+  justify-content: space-between;
+}
+
+.booking-row {
+  display: flex;
+  align-items: left;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  border-collapse: collapse;
+  width: 35%;
+  justify-content: space-between;
+}
+
+.booking-row span {
+  font-weight: bold;
+}
+
+.booking-row form {
+  display: inline-block;
+}
+
+.booking-row input[type="submit"] {
+  background-color: #f44336;
+  color: white;
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.booking-row input[type="submit"]:hover {
+  background-color: #d32f2f;
 }
