@@ -150,8 +150,8 @@ session_start();
         <?php require_once('api/generate_table.php');
 
         // Define the text and variable
-        $text = "boknings tabell";
-        $date = $_GET["date"];
+        $text = "Datum:";
+        $date = isset($_GET['date']) ? $_GET['date'] : date('Y-m-d');
         // date_default_timezone_set("Europe/Stockholm");
         $currentday = date("Y-m-d");
 
@@ -166,7 +166,7 @@ session_start();
 
         <table id="myTable">
             <tbody>
-                <?php generate_table($_GET["date"]); ?>
+                <?php generate_table($date); ?>
             </tbody>
         </table>
     </div>

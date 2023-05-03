@@ -33,7 +33,7 @@ session_start();
 </html>
 
 
-
+<div class= "booking-list-container">
 <div class="booking-list">
   <?php
   $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
@@ -69,4 +69,5 @@ session_start();
     // Add code to display a success message or redirect to a different page
   }
   ?>
+</div>
 </div>
