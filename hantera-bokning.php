@@ -28,7 +28,7 @@ session_start();
     </div>
 </body>
 
-
+<div class="booking-container">
 <!-- <div class="booking-list">
   <?php
     $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
@@ -44,7 +44,8 @@ session_start();
     ?>
 </div> -->
 
-<div class="booking-list">
+
+
     <?php
     $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
     $user_id = $_SESSION["loggedInMember"]["user_id"];

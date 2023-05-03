@@ -23,7 +23,7 @@ session_start();
       <div class="menu">
         <li><a href="admin.php">Min sida</a></li>
         <li><a href="/">Hantera bokningar</a></li>
-        <li><a href="login.php">Logga ut</a></li>
+        <li><a href="api/logout.php">Logga ut</a></li>
       </div>
     </ul>
   </nav>

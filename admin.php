@@ -20,7 +20,7 @@ session_start();
       <div class="menu">
         <li><a href="booking-admin.php">Boka</a></li>
         <li><a href="hantera-bokning.php">Hantera bokningar</a></li>
-        <li><a href="login.php">Logga ut</a></li>
+        <li><a href="login.php"> Logga ut</a></li>
       </div>
     </ul>
   </nav>
@@ -33,6 +33,7 @@ session_start();
 
 </html>
 
+<div class="booking-container">
 <!-- <div class="booking-list">
   <?php
   $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
@@ -48,7 +49,7 @@ session_start();
   ?>
 </div> -->
 
-<div class="booking-list">
+
   <?php
   $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
   $user_id = $_SESSION["loggedInMember"]["user_id"];
