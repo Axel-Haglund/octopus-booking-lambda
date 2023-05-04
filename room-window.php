@@ -13,7 +13,7 @@ session_start();
 </head>
 
 <body>
-    <link rel="stylesheet" href="project.css" />
+    <link rel="stylesheet" href="roomvy-style.css" />
     <nav class="navbar">
         <div class="logo">Octpous booking</div>
         <ul class="nav-links">

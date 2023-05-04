@@ -1,18 +1,12 @@
 <?php
 
-
-// hämtar möten från databas
 function getMeetings($date)
 {
     require __DIR__ . "/../db-connection.php";
 
-
-    $query = "select * from meeting WHERE date = '{$date}' ";
+    $query = "SELECT meeting.*, user.email FROM meeting JOIN user ON meeting.user_id = user.user_id WHERE date = '{$date}'";
     $result = mysqli_query($connection, $query);
 
-
-
-    // while loop som lagrar alla meetings
     $meetings = [];
     while ($meeting = $result->fetch_assoc()) {
         $meetings[] = $meeting;
@@ -20,19 +14,26 @@ function getMeetings($date)
     return $meetings;
 }
 
+function checkIfBooked($hour, $roomNumber, $meetings)
+{
+    $length = count($meetings);
+    for ($i = 0; $i < $length; $i++) {
+        if ($hour == $meetings[$i]["hour"] && $roomNumber == $meetings[$i]["room_id"]) {
+            return $meetings[$i];
+        }
+    }
+    return false;
+}
 
 function generate_table($date)
 {
-
     $_SESSION["selectedDate"] = $date;
 
     $meetings = getMeetings($date);
-    // Loop through rows
     for ($roomNumber = 1; $roomNumber <= 15; $roomNumber++) {
 
         echo "<tr>";
 
-        // Loop through columns
         for ($hour = 7; $hour <= 17; $hour++) {
 
             $time = sprintf(
@@ -42,18 +43,17 @@ function generate_table($date)
             );
 
             $isBooked = checkIfBooked($hour, $roomNumber, $meetings);
-            // echo $isBooked;
             if ($isBooked) {
-
-                echo "<td class='cell booked' id='room' data-hour = '$hour' data-room = '$roomNumber' data-is-booked = '$isBooked'> rum $roomNumber   $time</td>";
+                echo "<td class='cell booked' id='room' data-hour='$hour' data-room='$roomNumber' data-email='{$isBooked['email']}'> rum $roomNumber $time</td>";
             } else {
-                echo "<td class='cell' id='room' data-hour = '$hour' data-room = '$roomNumber' > rum $roomNumber   $time</td>";
+                echo "<td class='cell' id='room' data-hour='$hour' data-room='$roomNumber'> rum $roomNumber $time</td>";
             }
         }
 
         echo "</tr>";
     }
 }
+
 function generate_room_table($roomNumber, $date)
 {
     $meetings = getMeetings($date);
@@ -66,26 +66,10 @@ function generate_room_table($roomNumber, $date)
         );
 
         $isBooked = checkIfBooked($hour, $roomNumber, $meetings);
-        // echo $isBooked;
         if ($isBooked) {
-
-            echo "<td class='cell booked' id='room' data-hour = '$hour' data-room = '$roomNumber' data-is-booked = '$isBooked'> rum $roomNumber   $time</td>";
+            echo "<td class='cell booked' id='room' data-hour='$hour' data-room='$roomNumber' data-email='{$isBooked['email']}'> rum $roomNumber $time</td>";
         } else {
-            echo "<td class='cell' id='room' data-hour = '$hour' data-room = '$roomNumber' > rum $roomNumber   $time</td>";
+            echo "<td class='cell' id='room' data-hour='$hour' data-room='$roomNumber'> rum $roomNumber $time</td>";
         }
     }
-}
-
-function checkIfBooked($hour, $roomNumber,  $meetings)
-{
-
-    $length = count($meetings);
-    for ($i = 0; $i < $length; $i++) {
-
-        if ($hour == $meetings[$i]["hour"] && $roomNumber == $meetings[$i]["room_id"]) {
-            // echo var_dump($meetings[$i]);
-            return true;
-        }
-    }
-    return false;
 }

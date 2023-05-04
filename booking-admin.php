@@ -169,6 +169,19 @@ session_start();
     </table>
   </div>
 
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const bookedCells = document.querySelectorAll(".cell.booked");
+
+    bookedCells.forEach((cell) => {
+        cell.addEventListener("click", function () {
+            const email = this.getAttribute("data-email");
+            alert(`E-postadress för den som bokat rummet: ${email}`);
+        });
+    });
+});
+</script>
+
   <div class="invite-user">
     <h1>Bjud in kollegor</h1>
 
