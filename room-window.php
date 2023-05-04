@@ -16,6 +16,7 @@ session_start();
     <link rel="stylesheet" href="roomvy-style.css" />
     <nav class="navbar">
         <div class="logo">Octpous booking</div>
+        <h1> Rum 1 </h1>
         <ul class="nav-links">
             <div class="menu">
 

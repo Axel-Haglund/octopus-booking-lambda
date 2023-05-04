@@ -85,3 +85,8 @@ session_start();
   }
   ?>
 </div>
+<div> 
+<a href="booking-member.php"> <!-- Lägg till din önskade webbadress här -->
+    <button class="bookroom">Boka rum</button>
+  </a>
+</div>

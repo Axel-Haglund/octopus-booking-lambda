@@ -29,33 +29,16 @@ session_start();
 </body>
 
 <div class="booking-container">
-<!-- <div class="booking-list">
-  <?php
-    $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
-    $user_id = $_SESSION["loggedInMember"]["user_id"];
-
-    $sql = "SELECT room_id, hour, date, user_id FROM meeting;";
-    $result = mysqli_query($connection, $sql);
-
-    // Loop through the query results and populate the dropdown list
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<option>"  . $row['room_id'] . ", " . $row['date'] . ", " . $row['hour'] . ", " . $row['user_id'] .  "</option>";
-    }
-    ?>
-</div> -->
-
-
-
 <?php
 $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
 $user_id = $_SESSION["loggedInMember"]["user_id"];
 
-$sql = "SELECT room_id, hour, date, user_id FROM meeting;";
+$sql = "SELECT meeting.room_id, meeting.hour, meeting.date, user.email FROM meeting INNER JOIN user ON meeting.user_id = user.user_id;";
 $result = mysqli_query($connection, $sql);
 
 // Print the table headers
 echo "<table>";
-echo "<tr><th>Rum</th><th>Datum</th><th>Klockslag</th><th>Användar id</th><th></th></tr>";
+echo "<tr><th>Rum</th><th>Datum</th><th>Klockslag</th><th>Email</th><th></th></tr>";
 
 // Loop through the query results and populate the table rows with a delete button for each row
 while ($row = mysqli_fetch_assoc($result)) {
@@ -63,12 +46,12 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "<td>" . $row['room_id'] . "</td>";
     echo "<td>" . $row['date'] . "</td>";
     echo "<td>" . $row['hour'] . "</td>";
-    echo "<td>" . $row['user_id'] . "</td>";
+    echo "<td>" . $row['email'] . "</td>";
     echo "<td>";
     echo "<form method='post'>";
     echo "<input type='hidden' name='room' value='" . $row['room_id'] . "'>";
     echo "<input type='hidden' name='hour' value='" . $row['hour'] . "'>";
-    echo "<input type='hidden' name='date' value='" . $row['user_id'] . "'>";
+    echo "<input type='hidden' name='date' value='" . $row['email'] . "'>";
     echo "<input type='hidden' name='date' value='" . $row['date'] . "'>";
     echo "<input type='submit' name='delete' value='Delete'>";
     echo "</form>";
@@ -89,6 +72,5 @@ if (isset($_POST['delete'])) {
     mysqli_close($connection);
 }
 ?>
-    
-
 </div>
+</html>
