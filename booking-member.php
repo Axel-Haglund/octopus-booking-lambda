@@ -25,7 +25,6 @@ session_start();
     </nav>
 
 
-
     <div class="calender">
         <div class="header">
             <button id="prev" onclick="prevButtonOnClick()">Föregående</button>
@@ -48,7 +47,6 @@ session_start();
         </table>
     </div>
 
-    <!-- script för kalender -->
     <script>
         let selectedDate = "";
 
@@ -116,14 +114,40 @@ session_start();
                         const selectedYear = currentYear;
                         let dateString = `${selectedYear}-${selectedMonth}-${date}`;
                         dateCell.innerHTML = `<a href="?date=${dateString}" class="day-of-month">${date}</a>`;
-                        date++;
 
+                        // Anropa funktionerna för att markera dagens datum och inaktivera passerade datum
+                        highlightToday(dateCell, date);
+                        disablePastDates(dateCell, date);
+
+                        date++;
                     }
 
                     weekRow.appendChild(dateCell);
                 }
 
                 calenderBody.appendChild(weekRow);
+            }
+        }
+
+        function highlightToday(dateCell, date) {
+            const today = new Date();
+            if (
+                currentYear === today.getFullYear() &&
+                currentMonthIndex === today.getMonth() &&
+                date === today.getDate()
+            ) {
+                dateCell.classList.add("today");
+            }
+        }
+
+        function disablePastDates(dateCell, date) {
+            const selectedDate = new Date(currentYear, currentMonthIndex, date);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            if (selectedDate < today) {
+                dateCell.classList.add("past-date");
+                dateCell.firstChild.removeAttribute("href");
             }
         }
 
@@ -182,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-</script>
+    </script>
 
 
 

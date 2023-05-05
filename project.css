@@ -113,6 +113,7 @@ table .name.calender-body {
 th {
   padding: 10px;
   background-color: #ddd;
+  position: sticky;
 }
 
 td {
@@ -347,4 +348,36 @@ button:hover {
   padding: 20px; /* Lägg till lite padding runt innehållet för att göra det mer läsbart */
   border: 2px solid black;
   border-radius: 10px;
+}
+
+.today {
+  background-color: lightblue;
+  color: white;
+  border-radius: 10px;
+}
+
+.past-date {
+  color: lightgrey;
+  pointer-events: none;
+}
+.past-date a {
+  color: lightgrey;
+}
+
+.statisticsroom-container {
+  margin-left: 550px;
+  margin-top: -300px;
+  overflow-y: auto; /* Lägger till en vertikal skrollfunktion om innehållet överskrider max-height */
+  max-height: 300px;
+}
+
+.statisticsroom-container th {
+  position: sticky;
+}
+
+.all-bookings-title {
+  font-size: 24px; /* Ställ in storlek på texten */
+  color: #333; /* Ställ in textfärg */
+  font-weight: bold; /* Ställ in textstil */
+  text-align: center;
 }

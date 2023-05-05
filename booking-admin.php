@@ -28,149 +28,178 @@ session_start();
 
 
 
+ 
   <div class="calender">
-    <div class="header">
-      <button id="prev" onclick="prevButtonOnClick()">Föregående</button>
-      <h1 id="month"></h1>
-      <button id="next" onclick="nextButtonOnClick()">Nästa</button>
+        <div class="header">
+            <button id="prev" onclick="prevButtonOnClick()">Föregående</button>
+            <h1 id="month"></h1>
+            <button id="next" onclick="nextButtonOnClick()">Nästa</button>
+        </div>
+        <table name="calender-table">
+            <thead>
+                <tr>
+                    <th>Mån</th>
+                    <th>Tis</th>
+                    <th>Ons</th>
+                    <th>Tor</th>
+                    <th>Fre</th>
+                    <th>Lör</th>
+                    <th>Sön</th>
+                </tr>
+            </thead>
+            <tbody id="calender-body" name="calender-body"></tbody>
+        </table>
     </div>
-    <table name="calender-table">
-      <thead>
-        <tr>
-          <th>Mån</th>
-          <th>Tis</th>
-          <th>Ons</th>
-          <th>Tor</th>
-          <th>Fre</th>
-          <th>Lör</th>
-          <th>Sön</th>
-        </tr>
-      </thead>
-      <tbody id="calender-body" name="calender-body"></tbody>
-    </table>
-  </div>
 
-  <!-- script för kalender -->
-  <script>
-    let selectedDate = "";
+    <script>
+        let selectedDate = "";
 
-    let currentMonthIndex = new Date().getMonth();
-    let currentYear = new Date().getFullYear();
+        let currentMonthIndex = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
 
-    rendercalender();
+        rendercalender();
 
-    function rendercalender() {
-      const monthNames = [
-        "Januari",
-        "Februari",
-        "Mars",
-        "April",
-        "Maj",
-        "Juni",
-        "Juli",
-        "Augusti",
-        "September",
-        "Oktober",
-        "November",
-        "December",
-      ];
+        function rendercalender() {
+            const monthNames = [
+                "Januari",
+                "Februari",
+                "Mars",
+                "April",
+                "Maj",
+                "Juni",
+                "Juli",
+                "Augusti",
+                "September",
+                "Oktober",
+                "November",
+                "December",
+            ];
 
-      const currentMonthName = monthNames[currentMonthIndex];
+            const currentMonthName = monthNames[currentMonthIndex];
 
-      const daysOfWeek = ["Mån", "Tis", "Ons", "Tor", "Fre", "Lör", "Sön"];
+            const daysOfWeek = ["Mån", "Tis", "Ons", "Tor", "Fre", "Lör", "Sön"];
 
-      const daysInMonth = new Date(
-        currentYear,
-        currentMonthIndex + 1,
-        0
-      ).getDate();
-      const firstDayOfMonth = new Date(
-        currentYear,
-        currentMonthIndex,
-        1
-      ).getDay();
+            const daysInMonth = new Date(
+                currentYear,
+                currentMonthIndex + 1,
+                0
+            ).getDate();
+            const firstDayOfMonth = new Date(
+                currentYear,
+                currentMonthIndex,
+                1
+            ).getDay();
 
-      const calenderBody = document.getElementById("calender-body");
+            const calenderBody = document.getElementById("calender-body");
 
-      // Ta bort tidigare månaders datum
-      calenderBody.innerHTML = "";
+            // Ta bort tidigare månaders datum
+            calenderBody.innerHTML = "";
 
-      // Skapa månadshuvudet
-      const monthHeader = document.getElementById("month");
-      monthHeader.innerText = currentMonthName;
+            // Skapa månadshuvudet
+            const monthHeader = document.getElementById("month");
+            monthHeader.innerText = currentMonthName;
 
-      // Skapa datumceller
-      let date = 1;
-      for (let i = 0; i < 6; i++) {
-        const weekRow = document.createElement("tr");
+            // Skapa datumceller
+            let date = 1;
+            for (let i = 0; i < 6; i++) {
+                const weekRow = document.createElement("tr");
 
-        for (let j = 0; j < 7; j++) {
-          const dateCell = document.createElement("td");
-          dateCell.classList.add("date-cell");
+                for (let j = 0; j < 7; j++) {
+                    const dateCell = document.createElement("td");
+                    dateCell.classList.add("date-cell");
 
-          if (i === 0 && j < firstDayOfMonth - 1) {
-            // Lägg till tomma celler före första dagen i månaden
-          } else if (date > daysInMonth) {
-            // Lägg till tomma celler efter sista dagen i månaden
-          } else {
-            // Lägg till datum i cellen
-            const selectedMonth = currentMonthIndex + 1;
-            const selectedYear = currentYear;
-            let dateString = `${selectedYear}-${selectedMonth}-${date}`;
-            dateCell.innerHTML = `<a href="?date=${dateString}" class="day-of-month">${date}</a>`;
-            date++;
+                    if (i === 0 && j < firstDayOfMonth - 1) {
+                        // Lägg till tomma celler före första dagen i månaden
+                    } else if (date > daysInMonth) {
+                        // Lägg till tomma celler efter sista dagen i månaden
+                    } else {
+                        // Lägg till datum i cellen
+                        const selectedMonth = currentMonthIndex + 1;
+                        const selectedYear = currentYear;
+                        let dateString = `${selectedYear}-${selectedMonth}-${date}`;
+                        dateCell.innerHTML = `<a href="?date=${dateString}" class="day-of-month">${date}</a>`;
 
-          }
+                        // Anropa funktionerna för att markera dagens datum och inaktivera passerade datum
+                        highlightToday(dateCell, date);
+                        disablePastDates(dateCell, date);
 
-          weekRow.appendChild(dateCell);
+                        date++;
+                    }
+
+                    weekRow.appendChild(dateCell);
+                }
+
+                calenderBody.appendChild(weekRow);
+            }
         }
 
-        calenderBody.appendChild(weekRow);
-      }
-    }
+        function highlightToday(dateCell, date) {
+            const today = new Date();
+            if (
+                currentYear === today.getFullYear() &&
+                currentMonthIndex === today.getMonth() &&
+                date === today.getDate()
+            ) {
+                dateCell.classList.add("today");
+            }
+        }
 
-    function nextButtonOnClick() {
-      currentMonthIndex++;
-      if (currentMonthIndex > 11) {
-        currentMonthIndex = 0;
-        currentYear++;
-      }
-      rendercalender();
-    }
+        function disablePastDates(dateCell, date) {
+            const selectedDate = new Date(currentYear, currentMonthIndex, date);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
 
-    function prevButtonOnClick() {
-      currentMonthIndex--;
-      if (currentMonthIndex < 0) {
-        currentMonthIndex = 11;
-        currentYear--;
-      }
-      rendercalender();
-    }
-  </script>
+            if (selectedDate < today) {
+                dateCell.classList.add("past-date");
+                dateCell.firstChild.removeAttribute("href");
+            }
+        }
 
-  <div class="table-2" name="room">
-    <?php require_once('api/generate_table.php');
+        function nextButtonOnClick() {
+            currentMonthIndex++;
+            if (currentMonthIndex > 11) {
+                currentMonthIndex = 0;
+                currentYear++;
+            }
+            rendercalender();
+        }
 
-    // Define the text and variable
-    $text = "Datum:";
-    $date = isset($_GET['date']) ? $_GET['date'] : date('Y-m-d');
-    $currentday = date("Y-m-d");
+        function prevButtonOnClick() {
+            currentMonthIndex--;
+            if (currentMonthIndex < 0) {
+                currentMonthIndex = 11;
+                currentYear--;
+            }
+            rendercalender();
+        }
+    </script>
 
-    if (!$date) {
-      echo '<p>' . $text . ' ' . $currentday . '</p>';
-  } else {
-      echo '<p>' . $text . ' ' . $date . '</p>';
-  }
-    ?>
+    <div class="table-2" name="room">
+        <?php require_once('api/generate_table.php');
 
-    <table id="myTable">
-      <tbody>
-        <?php generate_table($date); ?>
-      </tbody>
-    </table>
-  </div>
+        // Define the text and variable
+        $text = "Datum:";
+        $date = isset($_GET['date']) ? $_GET['date'] : date('Y-m-d');
+        // date_default_timezone_set("Europe/Stockholm");
+        $currentday = date("Y-m-d");
 
-  <script>
+        // Output the text and variable above the table
+        if (!$date) {
+            echo '<p>' . $text . ' ' . $currentday . '</p>';
+        } else {
+            echo '<p>' . $text . ' ' . $date . '</p>';
+        }
+
+        ?>
+
+        <table id="myTable">
+            <tbody>
+                <?php generate_table($date); ?>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
 document.addEventListener("DOMContentLoaded", function () {
     const bookedCells = document.querySelectorAll(".cell.booked");
 
@@ -181,7 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-</script>
+    </script>
 
   <div class="invite-user">
     <h1>Bjud in kollegor</h1>

@@ -42,10 +42,8 @@ if ($_POST['password'] == $member["password"]) {
         "admin" => $member["admin"]
 
     ];
-} else {
-    echo "invalid";
-}
 
+    
 if ($_SESSION["loggedInMember"]["admin"] == 1) {
     show($_SESSION);
     header("location: ../admin.php");
@@ -53,6 +51,11 @@ if ($_SESSION["loggedInMember"]["admin"] == 1) {
     show($_SESSION);
     header("location: ../member.php");
 }
+} else {
+    echo "invalid";
+    header("location: ../login.php");
+}
+
 
 
 function show($variable)

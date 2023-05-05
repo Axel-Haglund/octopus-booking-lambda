@@ -29,6 +29,7 @@ session_start();
     </div>
 </body>
 
+<h2 class="all-bookings-title">Alla bokningar</h2>
 <div class="booking-container">
 <?php
 $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
@@ -73,5 +74,11 @@ if (isset($_POST['delete'])) {
     mysqli_close($connection);
 }
 ?>
+</div>
+<div class="statisticsroom-container">
+    <div class="scroll-statisticsroom">
+<?php require_once('api/generate_table.php'); ?>
+<?php displayRoomUsageStatistics(); ?>
+</div>
 </div>
 </html>
