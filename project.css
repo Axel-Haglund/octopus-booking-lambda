@@ -330,3 +330,21 @@ button:hover {
   left: 70%;
   top: 50%; /* Flytta knappen vertikalt så att den är i mitten av sidan */
 }
+
+.Updatemember-container {
+  margin-left: 400px; /* Flyttar containern 100px åt höger */
+  margin-top: -260px;
+  max-width: 300px; /* Justera detta värde för att ändra bredden på containern */
+  padding: 20px; /* Lägg till lite padding runt innehållet för att göra det mer läsbart */
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.addmember-container {
+  margin-top: 50px;
+  margin-left: 50px;
+  max-width: 300px; /* Justera detta värde för att ändra bredden på containern */
+  padding: 20px; /* Lägg till lite padding runt innehållet för att göra det mer läsbart */
+  border: 2px solid black;
+  border-radius: 10px;
+}

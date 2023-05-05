@@ -20,6 +20,7 @@ session_start();
       <div class="menu">
         <li><a href="booking-admin.php">Boka</a></li>
         <li><a href="hantera-bokning.php">Hantera bokningar</a></li>
+        <li> <a href="changeadmin.php"> Uppdatera information </a> </li>
         <li><a href="login.php"> Logga ut</a></li>
       </div>
     </ul>
@@ -86,7 +87,7 @@ session_start();
   ?>
 </div>
 <div> 
-<a href="booking-member.php"> <!-- Lägg till din önskade webbadress här -->
+<a href="booking-admin.php"> <!-- Lägg till din önskade webbadress här -->
     <button class="bookroom">Boka rum</button>
   </a>
 </div>
