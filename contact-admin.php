@@ -26,7 +26,7 @@ session_start();
 
     <div class="container">
         <h2>Problem med bokningsystemet?</h2>
-        <form action="api/booking.php" class="form" id="booking" method="post">
+        <form action="send-email.php" class="form" id="contact" method="post">
             Fyll i följande uppgifter så kontaktar vi dig som sanbbt som möjligt.
             <label class="form-item" for="name" id="name-label">Namn <span class="red-text"> *</span></label>
             <input class="form-item" type="text" name="name" id="name" required />
@@ -36,7 +36,12 @@ session_start();
 
             <label for="description">Beskriv ditt problem <span class="red-text"> *</span></label>
             <textarea class="form-item" name="description" id="description" cols="30" rows="10"></textarea>
-            <input class="form-item form-submit" type="submit" value="Skicka" />
+
+            <br>
+
+            <button>Skicka</button>
 
         </form>
     </div>
+
+</html>
