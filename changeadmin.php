@@ -109,7 +109,6 @@ mysqli_close($connection);
             <br>
             <input type="submit" value="Uppdatera">
         </form>
-
     </div>
 </body>
 
