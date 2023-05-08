@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } elseif ($action === 'update') {
         // Skapa SQL-uppdateringsfrågan
-        $sql = "UPDATE user SET first_name='$first_name', last_name='$last_name', email='$email', password='$password' WHERE user_id=$user_id";
+        $sql = "UPDATE user SET first_name='$first_name', last_name='$last_name', email='$email', password='$password' WHERE email='$email'";
 
         // Skicka SQL-uppdateringsfrågan till databasen
         if (mysqli_query($connection, $sql)) {
@@ -92,8 +92,8 @@ mysqli_close($connection);
         <h2>Uppdatera användarinformation</h2>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <input type="hidden" name="action" value="update">
-            <label for="user_id">Användar-ID:</label>
-            <input type="text" id="user_id" name="user_id" required>
+            <label for="email">Användare:</label>
+            <input type="email" id="email" name="email" required>
             <br>
             <label for="first_name">Förnamn:</label>
             <input type="text" id="first_name" name="first_name" required>
@@ -109,6 +109,7 @@ mysqli_close($connection);
             <br>
             <input type="submit" value="Uppdatera">
         </form>
+
     </div>
 </body>
 
