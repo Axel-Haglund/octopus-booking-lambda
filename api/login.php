@@ -30,6 +30,7 @@ show($member);
 //(password_verify($_POST['password'], $member["password"]))  
 
 if ($_POST['password'] == $member["password"]) {
+
     echo "valid";
     show($_SESSION);
     session_start();
@@ -43,14 +44,14 @@ if ($_POST['password'] == $member["password"]) {
 
     ];
 
-    
-if ($_SESSION["loggedInMember"]["admin"] == 1) {
-    show($_SESSION);
-    header("location: ../admin.php");
-} else {
-    show($_SESSION);
-    header("location: ../member.php");
-}
+
+    if ($_SESSION["loggedInMember"]["admin"] == 1) {
+        show($_SESSION);
+        header("location: ../admin.php");
+    } else {
+        show($_SESSION);
+        header("location: ../member.php");
+    }
 } else {
     echo "invalid";
     header("location: ../login.php");

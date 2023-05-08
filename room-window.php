@@ -19,14 +19,13 @@ session_start();
         <h1> Rum 1 </h1>
         <ul class="nav-links">
             <div class="menu">
-
             </div>
         </ul>
     </nav>
     <div class="room-view" name="room-view">
 
         <?php require_once('api/generate_table.php');
-        $date = "2023-04-28";
+        $date = date("Y-m-d");
         $roomNumber = 1;
         echo $date, $roomNumber;
         ?>
@@ -75,7 +74,20 @@ session_start();
                 console.log(selected_email);
                 $sql = "SELECT user_id FROM user WHERE email = '{selected_email}'";
                 $user_id = mysqli_query($connection, $sql);
+                LogInRoomMember($user_id);
+
             });
+
+            function LogInRoomMember() {
+
+                console.log("valid");
+                show($_SESSION);
+                session_start();
+                $_SESSION["isLoggedIn"] = true;
+                $_SESSION["loggedInMember"] = [
+                    "user_id" = $user_id
+                ];
+            }
 
             function sendEmails() {
                 var message = prompt("Enter your message:");
@@ -96,6 +108,7 @@ session_start();
                 Bekräfta
             </button>
             <button id="submitBookingButton" class="submit-button" type="submit" style="display:none">
+
                 Submit
             </button>
         </form>
