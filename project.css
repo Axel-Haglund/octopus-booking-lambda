@@ -231,7 +231,7 @@ select {
 }
 
 .send-emails-button {
-  background-color: green;
+  background-color: lightblue;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -243,7 +243,7 @@ select {
 }
 
 button:hover {
-  background-color: green;
+  background-color: lightblue;
 }
 
 /* mina sidor listan av bokningar */
@@ -379,5 +379,5 @@ button:hover {
   font-size: 24px; /* Ställ in storlek på texten */
   color: #333; /* Ställ in textfärg */
   font-weight: bold; /* Ställ in textstil */
-  text-align: center;
+  text-align: left;
 }

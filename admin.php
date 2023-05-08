@@ -40,7 +40,7 @@ session_start();
   $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
   $user_id = $_SESSION["loggedInMember"]["user_id"];
 
-  $sql = "SELECT room_id, hour, date FROM meeting WHERE user_id = '{$user_id}';";
+  $sql = "SELECT room_id, hour, date FROM meeting WHERE user_id = '{$user_id}' AND date >= CURDATE();";
   $result = mysqli_query($connection, $sql);
 
   // Loop through the query results and populate the dropdown list
@@ -78,7 +78,7 @@ session_start();
     $date = $_POST['date'];
     $query = "DELETE FROM meeting WHERE room_id = '{$room_id}' AND user_id = '{$user_id}' AND hour = '{$hour}' AND date = '{$date}';";
     mysqli_query($connection, $query);
-    header("Refresh:0");
+    
     // echo  $query;
     mysqli_close($connection);
 
