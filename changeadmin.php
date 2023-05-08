@@ -92,7 +92,7 @@ mysqli_close($connection);
         <h2>Uppdatera användarinformation</h2>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <input type="hidden" name="action" value="update">
-            <label for="user_id">Användare:</label>
+            <label for="email">Användare:</label>
             <input type="email" id="email" name="email" required>
             <br>
             <label for="first_name">Förnamn:</label>
@@ -109,6 +109,7 @@ mysqli_close($connection);
             <br>
             <input type="submit" value="Uppdatera">
         </form>
+
     </div>
 </body>
 
