@@ -24,9 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Skicka SQL-insertfrågan till databasen
         if (mysqli_query($connection, $sql)) {
-            echo "Användare tillagd.";
+            echo "<script>alert('Användare tillagd.')</script>";
         } else {
-            echo "Fel: " . $sql . "<br>" . mysqli_error($connection);
+            echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
         }
     } elseif ($action === 'update') {
         // Skapa SQL-uppdateringsfrågan
@@ -34,9 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Skicka SQL-uppdateringsfrågan till databasen
         if (mysqli_query($connection, $sql)) {
-            echo "Användare uppdaterad.";
+            echo "<script>alert('Användare uppdaterad.')</script>";
         } else {
-            echo "Fel: " . $sql . "<br>" . mysqli_error($connection);
+            echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
         }
     }
 }
