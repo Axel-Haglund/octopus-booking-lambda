@@ -20,7 +20,7 @@ session_start();
       <div class="menu">
         <li><a href="booking-admin.php">Boka</a></li>
         <li><a href="hantera-bokning.php">Hantera bokningar</a></li>
-        <li> <a href="changeadmin.php"> Uppdatera information </a> </li>
+        <li> <a href="changeadmin.php"> Uppdatera information </a> 
         <li><a href="login.php"> Logga ut</a></li>
       </div>
     </ul>
@@ -40,7 +40,7 @@ session_start();
   $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
   $user_id = $_SESSION["loggedInMember"]["user_id"];
 
-  $sql = "SELECT room_id, hour, date FROM meeting WHERE user_id = '{$user_id}';";
+  $sql = "SELECT room_id, hour, date FROM meeting WHERE user_id = '{$user_id}' AND date >= CURDATE();";
   $result = mysqli_query($connection, $sql);
 
   // Loop through the query results and populate the dropdown list
