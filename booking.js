@@ -16,7 +16,7 @@ function submitBooking(e) {
   e.preventDefault();
   const selectedCells = Array.from(document.querySelectorAll(".cell.selected"));
 
-  // console.log(selectedCells);
+  console.log(selectedCells);
 
   const bookings = [];
 
@@ -31,6 +31,7 @@ function submitBooking(e) {
       isbooked: listItem.dataset.isbooked,
     };
     bookings.push(itemData);
+    console.log(itemData);
   }
 
   sendBookings(bookings);

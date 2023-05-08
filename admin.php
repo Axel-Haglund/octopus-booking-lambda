@@ -20,7 +20,7 @@ session_start();
       <div class="menu">
         <li><a href="booking-admin.php">Boka</a></li>
         <li><a href="hantera-bokning.php">Hantera bokningar</a></li>
-        <li> <a href="changeadmin.php"> Uppdatera information </a> 
+        <li> <a href="changeadmin.php"> Uppdatera register </a> </li>
         <li><a href="login.php"> Logga ut</a></li>
       </div>
     </ul>
@@ -35,7 +35,7 @@ session_start();
 </html>
 
 <div class="booking-container">
-<!-- <div class="booking-list">
+  <!-- <div class="booking-list">
   <?php
   $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
   $user_id = $_SESSION["loggedInMember"]["user_id"];
@@ -86,8 +86,8 @@ session_start();
   }
   ?>
 </div>
-<div> 
-<a href="booking-admin.php"> <!-- Lägg till din önskade webbadress här -->
+<div>
+  <a href="booking-admin.php"> <!-- Lägg till din önskade webbadress här -->
     <button class="bookroom">Boka rum</button>
   </a>
 </div>

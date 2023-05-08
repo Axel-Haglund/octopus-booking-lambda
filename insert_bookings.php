@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $date = $_SESSION["selectedDate"];
         $user_id = $_SESSION["loggedInMember"]["user_id"];
         $query = "INSERT INTO meeting (room_id, user_id, hour, date) Values ('{$booking["room"]}','{$user_id}','{$booking["hour"]}', '{$date}');";
-        // echo $query;
+        echo $query;
         mysqli_query($connection, $query);
     }
     echo 'Data received successfully';
