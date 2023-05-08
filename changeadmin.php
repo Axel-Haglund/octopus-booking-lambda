@@ -16,9 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $room_size = $_POST['room_size'];
     $action = $_POST['action'];
 
-    if ($action === 'add') {
+    if ($action === 'addMember') {
         // Skapa SQL-insertfrågan
         $sql = "INSERT INTO user (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
 
@@ -28,13 +29,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
         }
-    } elseif ($action === 'update') {
+    } elseif ($action === 'updateMember') {
         // Skapa SQL-uppdateringsfrågan
         $sql = "UPDATE user SET first_name='$first_name', last_name='$last_name', email='$email', password='$password' WHERE user_id=$user_id";
 
         // Skicka SQL-uppdateringsfrågan till databasen
         if (mysqli_query($connection, $sql)) {
             echo "<script>alert('Användare uppdaterad.')</script>";
+        } else {
+            echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
+        }
+    } elseif ($action == 'addRoom') {
+        $sql = "INSERT INTO room (room_size) VALUES ('$room_size')";
+        if (mysqli_query($connection, $sql)) {
+            echo "<script>alert('Rum tillagt.')</script>";
+        } else {
+            echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
+        }
+    } elseif ($action == 'updateRoom') {
+        $sql = "UPDATE room SET room_size='$room_size'";
+
+        // Skicka SQL-uppdateringsfrågan till databasen
+        if (mysqli_query($connection, $sql)) {
+            echo "<script>alert('Rum uppdaterat.')</script>";
         } else {
             echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
         }
@@ -71,7 +88,7 @@ mysqli_close($connection);
     <div class="addmember-container">
         <h2>Lägg till användare</h2>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <input type="hidden" name="action" value="add">
+            <input type="hidden" name="action" value="addMember">
             <label for="first_name">Förnamn:</label>
             <input type="text" id="first_name" name="first_name" required>
             <br>
@@ -88,10 +105,10 @@ mysqli_close($connection);
         </form>
     </div>
 
-    <div class="Updatemember-container">
+    <!-- <div class="Updatemember-container">
         <h2>Uppdatera användarinformation</h2>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <input type="hidden" name="action" value="update">
+            <input type="hidden" name="action" value="updateMember">
             <label for="user_id">Användar-ID:</label>
             <input type="text" id="user_id" name="user_id" required>
             <br>
@@ -107,6 +124,27 @@ mysqli_close($connection);
             <label for="password">Lösenord:</label>
             <input type="password" id="password" name="password" required>
             <br>
+            <input type="submit" value="Uppdatera">
+        </form>
+    </div> -->
+
+    <div class="addRoom-container">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <input type="hidden" name="action" value="addRoom">
+            <label for="room_size">Rum:</label>
+            <input type="text" id="room_size" name="room_size" required>
+            <br>
+            <input type="submit" value="Lägg till">
+        </form>
+    </div>
+
+    <div class="updateRoom-container">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <input type="hidden" name="action" value="updateRoom">
+            <label for="room_size">Rumsstorlek:</label>
+            <input type="text" id="room_size" name="room_size" required>
+            <br>
+
             <input type="submit" value="Uppdatera">
         </form>
     </div>
