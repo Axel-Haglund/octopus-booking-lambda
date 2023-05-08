@@ -11,7 +11,7 @@ if (!$connection) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Ta emot formulärdata
-    $user_id = $_POST['user_id'];
+
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
@@ -24,9 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Skicka SQL-insertfrågan till databasen
         if (mysqli_query($connection, $sql)) {
-            echo "Användare tillagd.";
+            echo "<script>alert('Användare tillagd.')</script>";
         } else {
-            echo "Fel: " . $sql . "<br>" . mysqli_error($connection);
+            echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
         }
     } elseif ($action === 'update') {
         // Skapa SQL-uppdateringsfrågan
@@ -34,9 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Skicka SQL-uppdateringsfrågan till databasen
         if (mysqli_query($connection, $sql)) {
-            echo "Användare uppdaterad.";
+            echo "<script>alert('Användare uppdaterad.')</script>";
         } else {
-            echo "Fel: " . $sql . "<br>" . mysqli_error($connection);
+            echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
         }
     }
 }
@@ -51,7 +51,7 @@ mysqli_close($connection);
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="project.css" />
-    <title>Uppdatera information</title>
+    <title>Uppdatera register</title>
 </head>
 
 <body>
@@ -66,7 +66,7 @@ mysqli_close($connection);
             </div>
         </ul>
     </nav>
-    <h1>Uppdatera information</h1>
+    <h1>Uppdatera register</h1>
 
     <div class="addmember-container">
         <h2>Lägg till användare</h2>
@@ -108,22 +108,6 @@ mysqli_close($connection);
             <input type="password" id="password" name="password" required>
             <br>
             <input type="submit" value="Uppdatera">
-        </form>
-    </div>
-
-    <div class="addRoom">
-        <h2>Lägg till rum</h2>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-
-            <input type="submit" value="Lägg till">
-        </form>
-    </div>
-
-    <div class="uppdateRoom">
-        <h2>Uppdatera rum</h2>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-
-            <input type="submit" value="Lägg till">
         </form>
     </div>
 </body>
