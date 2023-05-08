@@ -78,7 +78,7 @@ session_start();
     $date = $_POST['date'];
     $query = "DELETE FROM meeting WHERE room_id = '{$room_id}' AND user_id = '{$user_id}' AND hour = '{$hour}' AND date = '{$date}';";
     mysqli_query($connection, $query);
-    header("Refresh:0");
+    
     // echo  $query;
     mysqli_close($connection);
 
