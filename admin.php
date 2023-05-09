@@ -20,7 +20,7 @@ session_start();
       <div class="menu">
         <li><a href="booking-admin.php">Boka</a></li>
         <li><a href="hantera-bokning.php">Hantera bokningar</a></li>
-        <li> <a href="changeadmin.php"> Uppdatera register </a> </li>
+        <li> <a href="admin_hantering.php"> Uppdatera register </a> </li>
         <li><a href="login.php"> Logga ut</a></li>
       </div>
     </ul>
@@ -78,7 +78,7 @@ session_start();
     $date = $_POST['date'];
     $query = "DELETE FROM meeting WHERE room_id = '{$room_id}' AND user_id = '{$user_id}' AND hour = '{$hour}' AND date = '{$date}';";
     mysqli_query($connection, $query);
-    
+
     // echo  $query;
     mysqli_close($connection);
 
