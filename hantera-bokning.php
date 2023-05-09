@@ -29,8 +29,9 @@ session_start();
     </div>
 </body>
 
-<h2 class="all-bookings-title">Alla bokningar</h2>
+
 <div class="booking-container">
+    <h2 class="all-bookings-title">Alla bokningar</h2>
     <?php
     $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
     $user_id = $_SESSION["loggedInMember"]["user_id"];

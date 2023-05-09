@@ -37,7 +37,14 @@
     }
 
     // Handle form submission
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['user_id']) && isset($_POST['action'])) {
+        $user_id = $_POST['user_id'];
+        $action = $_POST['action'];
+
+        // Rest of code
+    }
+
+    if (isset($_POST['user_id']) && isset($_POST['action'])) {
         $user_id = $_POST['user_id'];
         $action = $_POST['action'];
 
@@ -47,10 +54,13 @@
             exit;
         } else if ($action == 'delete') {
             // Delete user from database
-            $query = "DELETE FROM user WHERE user_id = $user_id";
-            mysqli_query($connection, $query);
+            $query = "DELETE FROM user WHERE user_id = ?";
+            $stmt = mysqli_prepare($connection, $query);
+            mysqli_stmt_bind_param($stmt, "i", $user_id);
+            mysqli_stmt_execute($stmt);
         }
     }
+
 
     // Retrieve all users from database
     $query = "SELECT * FROM user";
@@ -82,11 +92,11 @@
     <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Ta emot formulärdata
-        $first_name = $_POST['first_name'];
-        $last_name = $_POST['last_name'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $action = $_POST['action'];
+        $first_name = isset($_POST['first_name']) ? $_POST['first_name'] : '';
+        $last_name = isset($_POST['last_name']) ? $_POST['last_name'] : '';
+        $email = isset($_POST['email']) ? $_POST['email'] : '';
+        $password = isset($_POST['password']) ? $_POST['password'] : '';
+        $action = isset($_POST['action']) ? $_POST['action'] : '';
 
         if ($action === 'add') {
             // Skapa SQL-insertfrågan
@@ -100,6 +110,7 @@
             }
         }
     }
+
     ?>
 
     <h2>Lägg till användare</h2>
