@@ -332,22 +332,56 @@ button:hover {
   top: 50%; /* Flytta knappen vertikalt så att den är i mitten av sidan */
 }
 
-.Updatemember-container {
-  margin-left: 400px; /* Flyttar containern 100px åt höger */
-  margin-top: -260px;
-  max-width: 300px; /* Justera detta värde för att ändra bredden på containern */
-  padding: 20px; /* Lägg till lite padding runt innehållet för att göra det mer läsbart */
+.Register_change-container {
+  margin-left: 50px;
+  margin-top: 50px;
+  max-width: 65%;
+  max-height: 300px;
+  padding: 20px;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 2px;
+  overflow: auto;
+  display: inline-block;
 }
 
 .addmember-container {
   margin-top: 50px;
   margin-left: 50px;
-  max-width: 300px; /* Justera detta värde för att ändra bredden på containern */
-  padding: 20px; /* Lägg till lite padding runt innehållet för att göra det mer läsbart */
+  max-width: 300px;
+  padding: 20px;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.Register_change-container button {
+  background-color: rgb(250, 199, 17);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.Register_change-container button:hover {
+  background-color: #3e8e41; /* Darker green background color on hover */
+}
+
+.addmember-container button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.new-member {
+  text-align: center;
 }
 
 .today {
