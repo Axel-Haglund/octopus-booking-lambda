@@ -1,7 +1,10 @@
 <?php
 session_start();
 
-$roomNumber = $_GET["room"];
+// $roomNumber = $_GET["room"];
+
+$roomNumber = 1;
+
 
 ?>
 <!DOCTYPE html>
@@ -39,6 +42,7 @@ $roomNumber = $_GET["room"];
     </div>
 
     <div class="confirm-booking">
+
         <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $selected_email = $_POST['email'];
@@ -74,54 +78,9 @@ $roomNumber = $_GET["room"];
                     ?>
                 </select>
             </div>
-            <input type="submit" value="Submit">
+            <input id="submitBookingButton" class="submit-room-button" type="submit" value="Submit">
+
         </form>
-
-
-        <!-- <script>
-            var select = document.getElementById('user');
-            var selected_email = '';
-
-            select.addEventListener('change', function() {
-                selected_email = select.options[select.selectedIndex].value;
-                console.log(selected_email);
-                $sql = "SELECT user_id FROM user WHERE email = '{selected_email}'";
-                $user_id = mysqli_query($connection, $sql);
-                LogInRoomMember($user_id);
-
-            });
-
-            function LogInRoomMember() {
-
-                console.log("valid");
-                show($_SESSION);
-                session_start();
-                $_SESSION["isLoggedIn"] = true;
-                $_SESSION["loggedInMember"] = [
-                    "user_id" = $user_id
-                ];
-            }
-
-            function sendEmails() {
-                var message = prompt("Enter your message:");
-                if (message && selected_email) {
-                    console.log("Sending message: " + message);
-                    console.log("To user: " + selected_email);
-                    selected_email = '';
-                    select.selectedIndex = 0;
-                } else if (!selected_email) {
-                    alert("Please select a user.");
-                }
-
-            }
-        </script> -->
-
-        <!-- <form>
-            <button class="send-emails-button" onclick="sendRoomBookings(); document.getElementById('submitBookingButton').click();" type="button">
-                Bekräfta
-            </button>
-
-        </form> -->
 
         <script src="booking.js"></script>
     </div>
