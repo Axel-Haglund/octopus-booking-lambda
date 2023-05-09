@@ -93,8 +93,8 @@ h1 {
 }
 
 button {
-  background-color: #ddd(223, 217, 206, 0.453);
   border: none;
+  border-radius: 5px;
   padding: 10px;
   cursor: pointer;
   font-family: "Times New Roman", Times, serif;
@@ -325,6 +325,28 @@ button:hover {
   backdrop-filter: blur(2px);
 }
 
+.booking-container input[type="submit"] {
+  background-color: #f44336;
+  color: white;
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.booking-container input[type="submit"]:hover {
+  background-color: #d32f2f;
+}
+
+.home-container {
+  height: 400px;
+  width: 55%;
+  margin-left: 100px;
+  margin-top: 50px;
+  overflow: auto;
+}
+
 .bookroom {
   background-color: #050505;
   border: none;
@@ -346,7 +368,7 @@ button:hover {
   margin-left: 50px;
   margin-top: 50px;
   max-width: 65%;
-  max-height: 300px;
+  height: 300px;
   padding: 20px;
   border: 2px solid black;
   border-radius: 2px;

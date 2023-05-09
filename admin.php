@@ -33,7 +33,7 @@ session_start();
 
 </html>
 
-<div class="booking-container">
+<div class="home-container">
   <h2>Dina kommande bokningar</h2>
   <br />
   <!-- <div class="booking-list">
