@@ -25,8 +25,7 @@ session_start();
   </nav>
   <div>
     <h1>Välkommen!</h1>
-    <br />
-    <h2>Dina kommande bokningar</h2>
+
   </div>
 </body>
 
@@ -35,7 +34,9 @@ session_start();
 
 
 <div class="booking-container">
-  
+  <h2>Dina kommande bokningar</h2>
+  <br />
+
   <?php
   $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
   $user_id = $_SESSION["loggedInMember"]["user_id"];
@@ -63,18 +64,18 @@ session_start();
     $date = $_POST['date'];
     $query = "DELETE FROM meeting WHERE room_id = '{$room_id}' AND user_id = '{$user_id}' AND hour = '{$hour}' AND date = '{$date}';";
     mysqli_query($connection, $query);
-   
+
     // echo  $query;
     mysqli_close($connection);
 
     // Add code to display a success message or redirect to a different page
   }
   ?>
- 
+
 </div>
 
 <div>
-<a href="booking-member.php"> <!-- Lägg till din önskade webbadress här -->
+  <a href="booking-member.php"> <!-- Lägg till din önskade webbadress här -->
     <button class="bookroom">Boka rum</button>
   </a>
 

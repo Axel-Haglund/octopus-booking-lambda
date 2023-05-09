@@ -312,7 +312,17 @@ button:hover {
 
 .booking-container {
   height: 300px;
+  width: 50%;
+  margin-left: 100px;
+  margin-top: 50px;
   overflow: auto;
+  border-radius: 5px;
+  border: 2px solid black;
+  border-radius: 2px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 2px;
+  backdrop-filter: blur(2px);
 }
 
 .bookroom {
@@ -342,6 +352,7 @@ button:hover {
   border-radius: 2px;
   overflow: auto;
   display: inline-block;
+  backdrop-filter: blur(2px);
 }
 
 .addmember-container {
@@ -352,6 +363,7 @@ button:hover {
   border: 2px solid black;
   border-radius: 2px;
   display: inline-block;
+  backdrop-filter: blur(2px);
 }
 
 .Register_change-container button {
@@ -381,7 +393,30 @@ button:hover {
 }
 
 .new_member {
-  text-align: center;
+  margin: auto;
+  border-radius: 5px;
+  border: 2px solid black;
+  border-radius: 2px;
+  width: 200px;
+  margin-top: 50px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 2px;
+  backdrop-filter: blur(2px);
+}
+
+.new_member button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.new_member button:hover {
+  background-color: #3e8e41; /* Darker green background color on hover */
 }
 
 .today {
@@ -399,10 +434,17 @@ button:hover {
 }
 
 .statisticsroom-container {
-  margin-left: 550px;
+  margin-left: 850px;
   margin-top: -300px;
-  overflow-y: auto; /* Lägger till en vertikal skrollfunktion om innehållet överskrider max-height */
+  overflow: auto; /* Lägger till en vertikal skrollfunktion om innehållet överskrider max-height */
   max-height: 300px;
+  width: 25%;
+  border-radius: 5px;
+  border: 2px solid black;
+  border-radius: 2px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 2px;
 }
 
 .statisticsroom-container th {

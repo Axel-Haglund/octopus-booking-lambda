@@ -113,7 +113,6 @@
 
     ?>
 
-
     <h2>Lägg till användare</h2>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <input type="hidden" name="action" value="add">
