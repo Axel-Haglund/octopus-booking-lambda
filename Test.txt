@@ -8,3 +8,7 @@ I trule think that git will work for you
 hej hopp
 pocorn
 jättekul
+
+vid knapp tryck hämta email
+ skicka email till php
+ skapa bokning i php

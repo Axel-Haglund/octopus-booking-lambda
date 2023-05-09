@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+$roomNumber = $_GET["room"];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +18,7 @@ session_start();
     <link rel="stylesheet" href="roomvy-style.css" />
     <nav class="navbar">
         <div class="logo">Octpous booking</div>
-        <h1> Rum 1 </h1>
+        <h1> Rum <?php echo $roomNumber ?> </h1>
         <ul class="nav-links">
             <div class="menu">
             </div>
@@ -26,7 +28,6 @@ session_start();
 
         <?php require_once('api/generate_table.php');
         $date = date("Y-m-d");
-        $roomNumber = 1;
         echo $date, $roomNumber;
         ?>
 
@@ -38,34 +39,46 @@ session_start();
     </div>
 
     <div class="confirm-booking">
-        <div class="dropdown-email">
-            <label for="Email">Användare:</label>
-            <select name="email" id="user">
-                <?php
-                // Connect to the database
-                $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $selected_email = $_POST['email'];
+            echo "You selected email: $selected_email";
+        }
+        ?>
+        <form method="POST" action="insert_room_bookings.php">
+            <div class="dropdown-email">
+                <label for="Email">Användare:</label>
+                <select name="email" id="user">
+                    <?php
+                    // Connect to the database
+                    $connection = mysqli_connect("localhost", "root", "", "big-squid-booking");
 
-                // Check connection
-                if (!$connection) {
-                    die("Connection failed: " . mysqli_connect_error());
-                }
+                    // Check connection
+                    if (!$connection) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
 
-                // Query the database
-                $sql = "SELECT email FROM user";
-                $result = mysqli_query($connection, $sql);
+                    // Query the database
+                    $sql = "SELECT email FROM user";
+                    $result = mysqli_query($connection, $sql);
 
-                // Loop through the query results and populate the dropdown list
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<option>" . $row['email'] . "</option>";
-                }
+                    // Loop through the query results and populate the dropdown list
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $email = $row['email'];
+                        $selected = ($email == $selected_email) ? 'selected' : '';
+                        echo "<option value=\"$email\" $selected>$email</option>";
+                    }
 
-                // Close the database connection
-                mysqli_close($connection);
-                ?>
-            </select>
-        </div>
+                    // Close the database connection
+                    mysqli_close($connection);
+                    ?>
+                </select>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
 
-        <script>
+
+        <!-- <script>
             var select = document.getElementById('user');
             var selected_email = '';
 
@@ -101,17 +114,14 @@ session_start();
                 }
 
             }
-        </script>
+        </script> -->
 
-        <form>
-            <button class="send-emails-button" onclick="sendEmails(); document.getElementById('submitBookingButton').click();" type="button">
+        <!-- <form>
+            <button class="send-emails-button" onclick="sendRoomBookings(); document.getElementById('submitBookingButton').click();" type="button">
                 Bekräfta
             </button>
-            <button id="submitBookingButton" class="submit-button" type="submit" style="display:none">
 
-                Submit
-            </button>
-        </form>
+        </form> -->
 
         <script src="booking.js"></script>
     </div>

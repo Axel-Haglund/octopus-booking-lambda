@@ -33,7 +33,9 @@ function submitBooking(e) {
     bookings.push(itemData);
     console.log(itemData);
   }
+  // if () {
 
+  // }
   sendBookings(bookings);
 }
 
@@ -50,6 +52,24 @@ async function sendBookings(bookings) {
     const responseData = await response.text();
     console.log(responseData); // This is the response from your PHP file
     location.reload();
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+async function sendRoomBookings(bookings) {
+  console.log("banener", bookings);
+  try {
+    const response = await fetch("insert_room_bookings.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ bookings, user_id: 4 }),
+    });
+
+    const responseData = await response.text();
+    console.log(responseData); // This is the response from your PHP file
   } catch (error) {
     console.error("Error:", error);
   }
