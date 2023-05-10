@@ -3,3 +3,5 @@ prova att kommentera ut ifsatsen i insert_bookings igen visa david
 inte fan vet jag
 
 kolla styles o sånt yo
+
+txt.ddd
