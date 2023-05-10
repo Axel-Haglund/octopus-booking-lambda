@@ -27,8 +27,6 @@ session_start();
   </nav>
 
 
-
-
   <div class="calender">
     <div class="calender-header">
       <button id="prev" onclick="prevButtonOnClick()">Föregående</button>
@@ -283,7 +281,6 @@ session_start();
       }
 
       function sendEmails() {
-
         var message = prompt("Enter your message:");
         message = "hej";
         if (message) {
