@@ -1,14 +1,3 @@
-rumsvyns bokningar ska få det user_id som är valt i drop downlisten
-
-man ska kunna välja rum och datum för att kunna visa demo
-
-
-roses are red violets are blue 
-I trule think that git will work for you
-hej hopp
-pocorn
-jättekul
-
-vid knapp tryck hämta email
- skicka email till php
- skapa bokning i php
+glöm inte ändringen i login.php
+prova att kommentera ut ifsatsen i insert_bookings igen visa david
+inte fan vet jag
