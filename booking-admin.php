@@ -258,14 +258,14 @@ session_start();
       });
 
 
-      var participant;
+      var participant = "";
 
       function updateSelectedUsersList() {
         var selectedUsersDiv = document.querySelector('.selected-users');
         selectedUsersDiv.innerHTML = '';
         for (var i = 0; i < selected_users.length; i++) {
           var email = selected_users[i];
-          participant = participant + "," + email;
+          participant = participant + email + ",";
           var li = document.createElement('li');
           li.innerText = email;
           var deleteBtn = document.createElement('button');
