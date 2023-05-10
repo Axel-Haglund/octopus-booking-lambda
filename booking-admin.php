@@ -30,7 +30,7 @@ session_start();
 
 
   <div class="calender">
-    <div class="header">
+    <div class="calender-header">
       <button id="prev" onclick="prevButtonOnClick()">Föregående</button>
       <h1 id="month"></h1>
       <button id="next" onclick="nextButtonOnClick()">Nästa</button>
@@ -51,6 +51,8 @@ session_start();
     </table>
   </div>
 
+
+  <!-- calender script -->
   <script>
     let selectedDate = "";
 
@@ -174,7 +176,7 @@ session_start();
     }
   </script>
 
-  <div class="table-2" name="room">
+  <div class="booking-table" name="room">
     <?php require_once('api/generate_table.php');
 
     // Define the text and variable
