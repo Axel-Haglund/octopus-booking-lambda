@@ -30,7 +30,7 @@ $roomNumber = 1;
 
         <?php require_once('api/generate_table.php');
         $date = date("Y-m-d");
-        echo $date, $roomNumber;
+        echo $date;
         ?>
 
         <table id="roomViewTable">
