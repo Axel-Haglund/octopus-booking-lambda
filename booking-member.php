@@ -26,7 +26,7 @@ session_start();
 
 
     <div class="calender">
-        <div class="header">
+        <div class="calender-header">
             <button id="prev" onclick="prevButtonOnClick()">Föregående</button>
             <h1 id="month"></h1>
             <button id="next" onclick="nextButtonOnClick()">Nästa</button>
@@ -46,6 +46,7 @@ session_start();
             <tbody id="calender-body" name="calender-body"></tbody>
         </table>
     </div>
+
 
     <script>
         let selectedDate = "";
