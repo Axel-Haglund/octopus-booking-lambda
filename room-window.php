@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// $roomNumber = $_GET["room"];
 
 $roomNumber = 1;
 

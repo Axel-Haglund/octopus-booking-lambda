@@ -25,9 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Skicka SQL-insertfrågan till databasen
         if (mysqli_query($connection, $sql)) {
-            echo "<script>alert('Användare tillagd.')</script>";
+            echo "<script>//alert('Användare tillagd.')</script>";
         } else {
-            echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
+            echo "<script>//alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
         }
     } elseif ($action === 'updateMember') {
         // Skapa SQL-uppdateringsfrågan
@@ -35,25 +35,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Skicka SQL-uppdateringsfrågan till databasen
         if (mysqli_query($connection, $sql)) {
-            echo "<script>alert('Användare uppdaterad.')</script>";
+            echo "<script>//alert('Användare uppdaterad.')</script>";
         } else {
-            echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
+            echo "<script>//alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
         }
     } elseif ($action == 'addRoom') {
         $sql = "INSERT INTO room (room_size) VALUES ('$room_size')";
         if (mysqli_query($connection, $sql)) {
-            echo "<script>alert('Rum tillagt.')</script>";
+            echo "<script>//alert('Rum tillagt.')</script>";
         } else {
-            echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
+            echo "<script>//alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
         }
     } elseif ($action == 'updateRoom') {
         $sql = "UPDATE room SET room_size='$room_size'";
 
         // Skicka SQL-uppdateringsfrågan till databasen
         if (mysqli_query($connection, $sql)) {
-            echo "<script>alert('Rum uppdaterat.')</script>";
+            echo "<script>//alert('Rum uppdaterat.')</script>";
         } else {
-            echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
+            echo "<script>//alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
         }
     }
 }

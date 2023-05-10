@@ -104,9 +104,9 @@
 
             // Skicka SQL-insertfrågan till databasen
             if (mysqli_query($connection, $sql)) {
-                echo "<script>alert('Användare tillagd.')</script>";
+                echo "<script>//alert('Användare tillagd.')</script>";
             } else {
-                echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
+                echo "<script>//alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
             }
         }
     }

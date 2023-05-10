@@ -217,12 +217,11 @@ session_start();
         updateSelectedUsersList();
       });
 
+      var participant;
+
       function updateSelectedUsersList() {
         var selectedUsersDiv = document.querySelector('.selected-users');
         selectedUsersDiv.innerHTML = '';
-
-        var participant;
-
         for (var i = 0; i < selected_users.length; i++) {
           var email = selected_users[i];
           participant = participant + "," + email;
@@ -242,15 +241,15 @@ session_start();
       }
 
       function sendEmails() {
-        var message = prompt("Enter your message:");
+        // var message = prompt("Enter your message:");
         if (message) {
           console.log("Sending message: " + message);
           console.log("To users: " + selected_users.join(", "));
-          alert("Your message has been sent!");
+          // //alert("Your message has been sent!");
           selected_users = [];
           updateSelectedUsersList();
         } else {
-          alert("Please enter a message.");
+          // //alert("Please enter a message.");
         }
       }
     </script>

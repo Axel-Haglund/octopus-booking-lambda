@@ -13,8 +13,9 @@ function cellOnClick(event) {
 const submitBookingButton = document.getElementById("submitBookingButton");
 submitBookingButton.addEventListener("click", submitBooking);
 function submitBooking(e) {
+  // hääär
   let email = document.getElementById("user").value;
-
+  console.log("participant", participant);
   e.preventDefault();
   const selectedCells = Array.from(document.querySelectorAll(".cell.selected"));
 
@@ -35,18 +36,22 @@ function submitBooking(e) {
     bookings.push(itemData);
     console.log(itemData);
   }
-  sendBookings(bookings, email);
+  sendBookings(bookings, email, participant);
 }
 
-async function sendBookings(bookings, email) {
+async function sendBookings(bookings, email, participant) {
   try {
-    const response = await fetch("insert_bookings.php?email=" + email, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(bookings),
-    });
+    const response = await fetch(
+      "insert_bookings.php?email=" + email,
+      participant,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookings),
+      }
+    );
 
     const responseData = await response.text();
     console.log(responseData); // This is the response from your PHP file
