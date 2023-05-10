@@ -77,6 +77,7 @@ h1 {
   font-size: 25px;
 }
 
+/* Calender */
 .calender {
   font-family: "Times New Roman", Times, serif;
   max-width: 100px;
@@ -85,12 +86,22 @@ h1 {
   text-align: center;
 }
 
-.header {
+.calender-header {
   font-family: "Times New Roman", Times, serif;
   display: flex;
-  align-items: center;
   margin-bottom: 10px;
+  margin-left: 20%;
 }
+
+#prev,
+#next,
+#month {
+  margin-right: 30px;
+}
+
+/* #prev, #next{
+ size: ;
+} */
 
 button {
   border: none;
@@ -135,12 +146,12 @@ td {
 }
 
 /* booking table */
-.table-2 {
+.booking-table {
   position: relative;
   width: 46%;
   height: 330px;
   margin: 5% auto 0;
-  margin-top: -30%;
+  margin-top: -25%;
   margin-right: 5%;
 
   border-collapse: collapse;

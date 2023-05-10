@@ -13,6 +13,8 @@ function cellOnClick(event) {
 const submitBookingButton = document.getElementById("submitBookingButton");
 submitBookingButton.addEventListener("click", submitBooking);
 function submitBooking(e) {
+  let email = document.getElementById("user").value;
+
   e.preventDefault();
   const selectedCells = Array.from(document.querySelectorAll(".cell.selected"));
 
@@ -33,12 +35,12 @@ function submitBooking(e) {
     bookings.push(itemData);
     console.log(itemData);
   }
-  sendBookings(bookings);
+  sendBookings(bookings, email);
 }
 
-async function sendBookings(bookings) {
+async function sendBookings(bookings, email) {
   try {
-    const response = await fetch("insert_bookings.php", {
+    const response = await fetch("insert_bookings.php?email=" + email, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -48,7 +50,7 @@ async function sendBookings(bookings) {
 
     const responseData = await response.text();
     console.log(responseData); // This is the response from your PHP file
-    location.reload();
+    // location.reload();
   } catch (error) {
     console.error("Error:", error);
   }

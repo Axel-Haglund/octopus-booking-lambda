@@ -150,7 +150,7 @@ session_start();
     }
   </script>
 
-  <div class="table-2" name="room">
+  <div class="booking-table" name="room">
     <?php require_once('api/generate_table.php');
 
     // Define the text and variable

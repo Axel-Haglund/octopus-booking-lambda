@@ -170,7 +170,7 @@ session_start();
         }
     </script>
 
-    <div class="table-2" name="room">
+    <div class="booking-table" name="room">
         <?php require_once('api/generate_table.php');
 
         // Define the text and variable
@@ -196,16 +196,16 @@ session_start();
     </div>
 
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const bookedCells = document.querySelectorAll(".cell.booked");
+        document.addEventListener("DOMContentLoaded", function() {
+            const bookedCells = document.querySelectorAll(".cell.booked");
 
-    bookedCells.forEach((cell) => {
-        cell.addEventListener("click", function () {
-            const email = this.getAttribute("data-email");
-            alert(`E-postadress för den som bokat rummet: ${email}`);
+            bookedCells.forEach((cell) => {
+                cell.addEventListener("click", function() {
+                    const email = this.getAttribute("data-email");
+                    alert(`E-postadress för den som bokat rummet: ${email}`);
+                });
+            });
         });
-    });
-});
     </script>
 
 
