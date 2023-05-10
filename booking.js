@@ -42,8 +42,7 @@ function submitBooking(e) {
 async function sendBookings(bookings, email, participant) {
   try {
     const response = await fetch(
-      "insert_bookings.php?email=" + email,
-      participant,
+      "insert_bookings.php?email=" + email + "&participant=" + participant,
       {
         method: "POST",
         headers: {

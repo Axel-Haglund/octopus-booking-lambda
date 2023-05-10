@@ -208,7 +208,7 @@ session_start();
       bookedCells.forEach((cell) => {
         cell.addEventListener("click", function() {
           const email = this.getAttribute("data-email");
-          //alert(`E-postadress för den som bokat rummet: ${email}`);
+          alert(`E-postadress för den som bokat rummet: ${email}`);
         });
       });
     });
@@ -265,6 +265,7 @@ session_start();
         selectedUsersDiv.innerHTML = '';
         for (var i = 0; i < selected_users.length; i++) {
           var email = selected_users[i];
+          console.log(selected_users);
           participant = participant + email + ",";
           var li = document.createElement('li');
           li.innerText = email;
@@ -283,16 +284,16 @@ session_start();
 
       function sendEmails() {
 
-        // var message = prompt("Enter your message:");
+        var message = prompt("Enter your message:");
         message = "hej";
         if (message) {
           console.log("Sending message: " + message);
           console.log("To users: " + selected_users.join(", "));
-          // //alert("Your message has been sent!");
+          alert("Your message has been sent!");
           selected_users = [];
           updateSelectedUsersList();
         } else {
-          // //alert("Please enter a message.");
+          alert("Please enter a message.");
         }
       }
     </script>

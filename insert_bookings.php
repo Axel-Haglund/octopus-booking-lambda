@@ -2,7 +2,7 @@
 require("db-connection.php");
 session_start();
 
-if ($_SESSION["isLoggedIn"] == false) {
+if ($_SESSION["isLoggedIn"]) {
     insertLoggedIn();
 } else {
     insertRoom();
@@ -14,16 +14,26 @@ function insertLoggedIn()
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        echo $_POST["email"];
-
+        $participant = $_GET["participant"];
+        echo "participant are: " . $participant;
         $json = file_get_contents('php://input');
         $bookings = json_decode($json, true);
+
+
+        //query, insert participants
+        $query = "INSERT INTO participant (receiver) Values ('{$participant}');";
+        mysqli_query($connection, $query);
+
+        // hämta ut id av den som skapades
+        $participant_id = mysqli_insert_id($connection);
+
         foreach ($bookings as $booking) {
 
             echo  var_dump($booking);
             $date = $_SESSION["selectedDate"];
             $user_id = $_SESSION["loggedInMember"]["user_id"];
-            $query = "INSERT INTO meeting (room_id, user_id, hour, date) Values ('{$booking["room"]}','{$user_id}','{$booking["hour"]}', '{$date}');";
+
+            $query = "INSERT INTO meeting (room_id, user_id, participant_id, hour, date) Values ('{$booking["room"]}','{$user_id}','{$participant_id}','{$booking["hour"]}','{$date}');";
             // insert the participants aswell
             echo $query;
             mysqli_query($connection, $query);
