@@ -3,12 +3,13 @@ require("db-connection.php");
 session_start();
 
 if ($_SESSION["isLoggedIn"]) {
-    insertLoggedIn();
+    $sender = $_SESSION["loggedInMember"]["email"];
+    insertLoggedIn($sender);
 } else {
     insertRoom();
 }
 
-function insertLoggedIn()
+function insertLoggedIn($sender)
 {
     require("db-connection.php");
 
@@ -21,7 +22,7 @@ function insertLoggedIn()
 
 
         //query, insert participants
-        $query = "INSERT INTO participant (receiver) Values ('{$participant}');";
+        $query = "INSERT INTO participant (sender, receiver) Values ('{$sender}','{$participant}');";
         mysqli_query($connection, $query);
 
         // hämta ut id av den som skapades

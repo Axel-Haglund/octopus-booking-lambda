@@ -195,6 +195,7 @@ session_start();
         </table>
     </div>
 
+    <!-- Tells user who made the booking (only applies to booked timeslots ie red cells) -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const bookedCells = document.querySelectorAll(".cell.booked");

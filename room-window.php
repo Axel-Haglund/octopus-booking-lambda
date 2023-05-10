@@ -77,6 +77,21 @@ $roomNumber = 1;
                     ?>
                 </select>
             </div>
+
+            <!-- Tells user who made the booking (only applies to booked timeslots ie red cells) -->
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const bookedCells = document.querySelectorAll(".cell.booked");
+
+                    bookedCells.forEach((cell) => {
+                        cell.addEventListener("click", function() {
+                            const email = this.getAttribute("data-email");
+                            alert(`E-postadress för den som bokat rummet: ${email}`);
+                        });
+                    });
+                });
+            </script>
+
             <input id="submitBookingButton" class="submit-room-button" type="submit" value="Submit">
 
         </form>
