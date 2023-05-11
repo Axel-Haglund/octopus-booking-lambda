@@ -30,7 +30,7 @@ $roomNumber = 1;
 
         <?php require_once('api/generate_table.php');
         $date = date("Y-m-d");
-        echo $date;
+        echo $date, $roomNumber;
         ?>
 
         <table id="roomViewTable">
@@ -48,7 +48,7 @@ $roomNumber = 1;
             echo "You selected email: $selected_email";
         }
         ?>
-        <form method="POST" action="insert_room_bookings.php">
+        <form method="POST" action="insert_bookings.php">
             <div class="dropdown-email">
                 <label for="Email">Användare:</label>
                 <select name="email" id="user">
