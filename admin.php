@@ -21,7 +21,7 @@ session_start();
         <li><a href="booking-admin.php">Boka</a></li>
         <li><a href="hantera-bokning.php">Hantera bokningar</a></li>
         <li> <a href="admin_hantering.php"> Uppdatera register </a> </li>
-        <li><a href="login.php"> Logga ut</a></li>
+        <li><a href="api/logout.php"> Logga ut</a></li>
       </div>
     </ul>
   </nav>

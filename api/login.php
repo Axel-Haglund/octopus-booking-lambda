@@ -29,8 +29,8 @@ show($member);
 // member password_hash är lösenordet i databasen
 //(password_verify($_POST['password'], $member["password"]))  
 show($_SESSION);
-session_start();
-$_SESSION["isLoggedIn"] = false;
+// session_start();
+// $_SESSION["isLoggedIn"] = false;
 
 if ($_POST['password'] == $member["password"]) {
 
