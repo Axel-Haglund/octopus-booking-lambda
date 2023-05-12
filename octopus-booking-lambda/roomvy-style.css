@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 5px;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/718/177/161/ocean-octopus-sea-sealife-wallpaper-preview.jpg);
+  background-size: cover;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  font-family: "Times New Roman", Times, serif;
+}
+.logo {
+  color: #ccc;
+  font-size: 50px;
+  font-family: "Times New Roman", Times, serif;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: -1%;
+}
+
+h1 {
+  color: #ddd;
+  font-size: 80px;
+  margin-right: -60%;
+}
+
+th {
+  padding: 10px;
+  background-color: #ddd;
+}
+
+td {
+  padding: 38px;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+td#room.cell.selected {
+  text-align: center;
+  background-color: rgba(128, 128, 128, 0.745);
+}
+
+td#room.cell.booked {
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0.732);
+}
+
+td#room.cell {
+  text-align: center;
+  background-color: rgba(0, 128, 0, 0.747);
+  user-select: none;
+  border-color: #0c0b0b;
+  border-width: 2px;
+  border-style: solid;
+
+  width: 10px;
+  height: 15px;
+}
+
+/*Mail dropdown*/
+
+.invite-user {
+  backdrop-filter: blur(5px);
+  max-width: 46%;
+  min-height: 200px;
+  color: white;
+  margin: right 5% auto 0;
+  margin-top: 0%;
+  position: relative;
+  margin: 5% auto 0;
+  margin-right: 5%;
+  font-family: "Times New Roman", Times, serif;
+}
+.dropdown-email {
+  margin-bottom: 20px;
+}
+
+.room-view {
+  color: #ddd;
+  font-size: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ccc;
+  font-size: 45px;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.selected-users li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between 5px; /* align items horizontally with space between them */
+}
+
+.selected-users li button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-shrink: 0; /* prevent the button from shrinking */
+  position: absolute;
+  right: 0;
+}
+
+.selected-users li:not(:last-child) {
+  margin-right: 10px; /* add margin to the right of all li elements except the last one */
+}
+
+.send-emails-button {
+  background-color: rgba(26, 103, 228, 0.526);
+  color: #fafafa;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+button:hover {
+  background-color: rgba(6, 116, 242, 0.768);
+}
+
+/* mina sidor listan av bokningar */
+
+.invite-user {
+  backdrop-filter: blur(5px);
+  max-width: 46%;
+  min-height: 200px;
+  color: black;
+  margin: right 5% auto 0;
+  margin-top: 0%;
+  position: relative;
+  margin: 5% auto 0;
+  margin-right: 5%;
+  font-family: "Times New Roman", Times, serif;
+}
