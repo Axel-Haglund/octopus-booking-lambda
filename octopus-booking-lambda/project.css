@@ -1,0 +1,494 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-image: url(https://w7.pngwing.com/pngs/499/159/png-transparent-ocean-seawater-wind-wave-ocean-marine-mammal-computer-wallpaper-coastal-and-oceanic-landforms.png);
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.loginnavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: black;
+  backdrop-filter: blur(10px);
+  filter: brightness(1, 7);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.nav-links a {
+  color: #0c0b0b;
+}
+
+.logo {
+  font-size: 32px;
+  background-image: url(https://www.nicepng.com/png/full/545-5451130_download-png-octopus-ink-animated.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 60px;
+}
+
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.menu li:hover {
+  background-color: #b0c4e7;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.menu li {
+  padding: 5px 14px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: #0c0b0b;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#mybookings {
+  color: black;
+  position: absolute;
+  left: 100px;
+  font-size: 25px;
+}
+
+/* Calender */
+.calender {
+  font-family: "Times New Roman", Times, serif;
+  max-width: 100px;
+  margin-left: 5%;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.calender-header {
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  margin-bottom: 10px;
+  margin-left: 20%;
+}
+
+#prev,
+#next,
+#month {
+  margin-right: 30px;
+}
+
+/* #prev, #next{
+ size: ;
+} */
+
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+}
+
+table .name.calender-body {
+  width: 50%;
+  border-collapse: collapse;
+}
+
+#calender-body {
+  background-color: rgba(0, 255, 255, 0);
+  backdrop-filter: blur 5px;
+}
+
+th {
+  padding: 10px;
+  background-color: #ddd;
+  position: sticky;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(246, 248, 248, 0);
+}
+
+.day-of-month {
+  background-color: rgba(32, 102, 222, 0);
+  cursor: pointer;
+  color: rgb(8, 8, 8);
+  font-size: 15px;
+}
+
+.date-cell:hover .day-of-month {
+  background-color: #0ea1f061;
+  color: #fff;
+}
+
+/* booking table */
+.booking-table {
+  position: relative;
+  width: 46%;
+  height: 330px;
+  margin: 5% auto 0;
+  margin-top: -25%;
+  margin-right: 5%;
+
+  border-collapse: collapse;
+  border-spacing: 5px;
+  padding-top: 5px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+td#room.cell.selected {
+  text-align: center;
+  background-color: gray;
+}
+
+td#room.cell.booked {
+  text-align: center;
+  background-color: red;
+}
+
+td#room.cell {
+  text-align: center;
+  background-color: green;
+  user-select: none;
+  border-color: #0c0b0b;
+  border-width: 2px;
+  border-style: solid;
+
+  width: 10px;
+  height: 15px;
+}
+
+.today {
+  background-color: #f2f2f2;
+}
+
+/*Mail dropdown*/
+
+.invite-user {
+  backdrop-filter: blur(5px);
+  max-width: 46%;
+  min-height: 200px;
+  color: white;
+  margin: right 5% auto 0;
+  margin-top: 0%;
+  position: relative;
+  margin: 5% auto 0;
+  margin-right: 5%;
+}
+
+.dropdown-email {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.selected-users li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between 5px; /* align items horizontally with space between them */
+}
+
+.selected-users li button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-shrink: 0; /* prevent the button from shrinking */
+  position: absolute;
+  right: 0;
+}
+
+.selected-users li:not(:last-child) {
+  margin-right: 10px; /* add margin to the right of all li elements except the last one */
+}
+
+.send-emails-button {
+  background-color: lightblue;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+button:hover {
+  background-color: lightblue;
+}
+
+/* mina sidor listan av bokningar */
+
+.invite-user {
+  backdrop-filter: blur(5px);
+  max-width: 46%;
+  min-height: 200px;
+  color: black;
+  margin: right 5% auto 0;
+  margin-top: 0%;
+  position: relative;
+  margin: 5% auto 0;
+  margin-right: 5%;
+}
+.booking-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.booking-row span {
+  margin-right: 10px;
+}
+
+.booking-row input[type="submit"] {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.booking-row {
+  display: flex;
+  align-items: left;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  border-collapse: collapse;
+  width: 35%;
+  justify-content: space-between;
+}
+
+.booking-row span {
+  font-weight: bold;
+}
+
+.booking-row form {
+  display: inline-block;
+}
+
+.booking-row input[type="submit"] {
+  background-color: #f44336;
+  color: white;
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.booking-row input[type="submit"]:hover {
+  background-color: #d32f2f;
+}
+
+.booking-container {
+  height: 300px;
+  width: 50%;
+  margin-left: 100px;
+  margin-top: 50px;
+  overflow: auto;
+  border-radius: 5px;
+  border: 2px solid black;
+  border-radius: 2px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 2px;
+  backdrop-filter: blur(2px);
+}
+
+.booking-container input[type="submit"] {
+  background-color: #f44336;
+  color: white;
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.booking-container input[type="submit"]:hover {
+  background-color: #d32f2f;
+}
+
+.home-container {
+  height: 400px;
+  width: 55%;
+  margin-left: 100px;
+  margin-top: 50px;
+  overflow: auto;
+}
+
+.bookroom {
+  background-color: #050505;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-right: 10%;
+  position: absolute;
+  left: 70%;
+  top: 50%; /* Flytta knappen vertikalt så att den är i mitten av sidan */
+}
+
+.Register_change-container {
+  margin-left: 50px;
+  margin-top: 50px;
+  max-width: 65%;
+  height: 300px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 2px;
+  overflow: auto;
+  display: inline-block;
+  backdrop-filter: blur(2px);
+}
+
+.addmember-container {
+  margin-top: 50px;
+  margin-left: 50px;
+  max-width: 300px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 2px;
+  display: inline-block;
+  backdrop-filter: blur(2px);
+}
+
+.Register_change-container button {
+  background-color: rgb(250, 199, 17);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.Register_change-container button:hover {
+  background-color: #3e8e41; /* Darker green background color on hover */
+}
+
+.addmember-container button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.new_member {
+  margin: auto;
+  border-radius: 5px;
+  border: 2px solid black;
+  border-radius: 2px;
+  width: 200px;
+  margin-top: 50px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 2px;
+  backdrop-filter: blur(2px);
+}
+
+.new_member button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.new_member button:hover {
+  background-color: #3e8e41; /* Darker green background color on hover */
+}
+
+.today {
+  background-color: lightblue;
+  color: white;
+  border-radius: 10px;
+}
+
+.past-date {
+  color: lightgrey;
+  pointer-events: none;
+}
+.past-date a {
+  color: lightgrey;
+}
+
+.statisticsroom-container {
+  margin-left: 850px;
+  margin-top: -300px;
+  overflow: auto; /* Lägger till en vertikal skrollfunktion om innehållet överskrider max-height */
+  max-height: 300px;
+  width: 25%;
+  border-radius: 5px;
+  border: 2px solid black;
+  border-radius: 2px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 2px;
+}
+
+.statisticsroom-container th {
+  position: sticky;
+}
+
+.all-bookings-title {
+  font-size: 24px; /* Ställ in storlek på texten */
+  color: #333; /* Ställ in textfärg */
+  font-weight: bold; /* Ställ in textstil */
+  text-align: left;
+}
+
+/* test */
