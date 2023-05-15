@@ -19,7 +19,7 @@ $roomNumber = 1;
 <body>
     <link rel="stylesheet" href="roomvy-style.css" />
     <nav class="navbar">
-        <div class="logo">Octpous booking</div>
+        <div class="logo">OctopusBooking</div>
         <h1> Rum <?php echo $roomNumber ?> </h1>
         <ul class="nav-links">
             <div class="menu">
@@ -92,7 +92,7 @@ $roomNumber = 1;
                 });
             </script>
 
-            <input id="submitBookingButton" class="submit-room-button" type="submit" value="Submit">
+            <input id="submitBookingButton" class="submit-room-button" type="submit" value="Bekräfta">
 
         </form>
 
