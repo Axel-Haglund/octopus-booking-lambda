@@ -105,7 +105,7 @@ mysqli_close($connection);
         </form>
     </div>
 
-    <!-- <div class="Updatemember-container">
+    <div class="Updatemember-container">
         <h2>Uppdatera användarinformation</h2>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <input type="hidden" name="action" value="update">
@@ -126,7 +126,7 @@ mysqli_close($connection);
             <br>
             <input type="submit" value="Uppdatera">
         </form>
-    </div> -->
+    </div>
 
     <div class="addRoom-container">
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
