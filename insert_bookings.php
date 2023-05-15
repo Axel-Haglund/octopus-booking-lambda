@@ -6,7 +6,8 @@ if (isset($_SESSION["isLoggedIn"])) {
     $sender = $_SESSION["loggedInMember"]["email"];
     insertLoggedIn($sender);
 } else {
-    insertRoom();
+    $email = "admin.admin@example.com";
+    insertRoom($email);
 }
 
 function insertLoggedIn($sender)
@@ -43,23 +44,24 @@ function insertLoggedIn($sender)
     }
 }
 
-function insertRoom()
+function insertRoom($email)
 {
     require("db-connection.php");
 
-    // Kolla upp vilket id som hör till email adressen :)
-    $email = $_GET["email"];
+    // Kolla upp vilket id som hör till email adressen :) (nu avaktiverat eftersom jag skickar med admins mail)
+    // $email = $_GET["email"];
 
     $query = "SELECT user_id FROM user WHERE email ='{$email}';";
     echo $query;
     $result = mysqli_query($connection, $query);
     $user_id = mysqli_fetch_assoc($result)["user_id"];
-    echo $user_id;
+    echo "user id:" . $user_id;
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $json = file_get_contents('php://input');
         $bookings = json_decode($json, true);
+
         foreach ($bookings as $booking) {
 
             echo  var_dump($booking);
