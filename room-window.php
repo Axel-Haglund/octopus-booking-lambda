@@ -28,9 +28,12 @@ $roomNumber = 1;
     </nav>
     <div class="room-view" name="room-view">
 
-        <?php require_once('api/generate_table.php');
-        $date = date("Y-m-d");
-        echo $date, $roomNumber;
+    <?php require_once('api/generate_table.php');
+    $date = isset($_GET['date']) ? $_GET['date'] : date('Y-m-d');
+        $roomNumber = 1;
+        $text = "Dagens datum: ";
+        $text1 = "Rum: ";
+        echo $text, $date, " ", $text1, $roomNumber;
         ?>
 
         <table id="roomViewTable">

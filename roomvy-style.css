@@ -9,6 +9,7 @@ body {
   font-family: "Times New Roman", Times, serif;
   background-image: url(https://c4.wallpaperflare.com/wallpaper/718/177/161/ocean-octopus-sea-sealife-wallpaper-preview.jpg);
   background-size: cover;
+  zoom: 90%; /* Lägg till denna rad */
 }
 
 .navbar {
@@ -61,7 +62,6 @@ td#room.cell {
   border-color: #0c0b0b;
   border-width: 2px;
   border-style: solid;
-
   width: 10px;
   height: 15px;
 }
