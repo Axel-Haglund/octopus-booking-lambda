@@ -25,7 +25,7 @@ session_start();
         </ul>
     </nav>
     <div>
-        <h1>Samtliga bokningar</h1>
+        <h1>Hantera bokningar</h1>
     </div>
 </body>
 
