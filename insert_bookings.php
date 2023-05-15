@@ -2,7 +2,7 @@
 require("db-connection.php");
 session_start();
 
-if ($_SESSION["isLoggedIn"]) {
+if (isset($_SESSION["isLoggedIn"])) {
     $sender = $_SESSION["loggedInMember"]["email"];
     insertLoggedIn($sender);
 } else {
