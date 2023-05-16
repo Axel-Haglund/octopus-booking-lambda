@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Skicka SQL-insertfrågan till databasen
         if (mysqli_query($connection, $sql)) {
             echo "<script>alert('Användare tillagd.')</script>";
+            header("Location: /changeadmin.php");
         } else {
             echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
         }
@@ -36,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Skicka SQL-uppdateringsfrågan till databasen
         if (mysqli_query($connection, $sql)) {
             echo "<script>alert('Användare uppdaterad.')</script>";
+            header("Refresh:2");
         } else {
             echo "<script>alert('Fel: " . $sql . "<br>" . mysqli_error($connection) . "')</script>";
         }

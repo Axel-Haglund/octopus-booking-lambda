@@ -199,6 +199,7 @@ session_start();
     </table>
   </div>
 
+  <!-- check if a booked cell has been clicked and if so it shows the email of the persson that has made the booking -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const bookedCells = document.querySelectorAll(".cell.booked");
@@ -206,11 +207,14 @@ session_start();
       bookedCells.forEach((cell) => {
         cell.addEventListener("click", function() {
           const email = this.getAttribute("data-email");
+          const size = this.getAttribute("data-size");
+          let text = size.toString(10);
           alert(`E-postadress för den som bokat rummet: ${email}`);
         });
       });
     });
   </script>
+
 
   <div class="invite-user">
     <h1>Bjud in kollegor</h1>
