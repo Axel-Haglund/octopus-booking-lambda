@@ -14,7 +14,7 @@ session_start();
 <body>
     <link rel="stylesheet" href="project.css" />
     <nav class="navbar">
-        <div class="logo">Octopus booking</div>
+        <div class="logo">OctopusBooking</div>
         <ul class="nav-links">
             <div class="menu">
                 <li><a href="member.php">Min sida</a></li>
