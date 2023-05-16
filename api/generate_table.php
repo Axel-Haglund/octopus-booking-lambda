@@ -27,6 +27,7 @@ function checkIfBooked($hour, $roomNumber, $meetings)
 
 function generate_table($date)
 {
+    require __DIR__ . "/../db-connection.php";
     $_SESSION["selectedDate"] = $date;
 
     $meetings = getMeetings($date);
@@ -46,7 +47,7 @@ function generate_table($date)
             if ($isBooked) {
                 echo "<td class='cell booked' id='room' data-hour='$hour' data-room='$roomNumber' data-email='{$isBooked['email']}'> rum $roomNumber $time</td>";
             } else {
-                echo "<td class='cell' id='room' data-hour='$hour' data-room='$roomNumber'> rum $roomNumber $time</td>";
+                echo "<td class='cell' id='room' data-hour='$hour' data-room='$roomNumber' > rum $roomNumber $time</td>";
             }
         }
 
